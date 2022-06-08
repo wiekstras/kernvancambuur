@@ -14,6 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+// Fallback
+Route::any('/v1/{any}', function() { abort(404, 'page not found'); })->where('any', '.*');
