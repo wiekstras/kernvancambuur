@@ -1,10 +1,12 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import HomePage from '@/views/homePagina/HomePage.vue'
 import PageNotFound from "@/views/layout/PageNotFound.vue";
+import SfeeractiesPage from "@/views/sfeeractiesPagina/sfeeractiesPage.vue";
 
 
 let routes = [
     {path: '/', component: HomePage, name: 'HomePage'},
+    {path: '/sfeeracties', component: SfeeractiesPage, name: 'SfeeractiesPage'}
 ];
 
 routes.push(
