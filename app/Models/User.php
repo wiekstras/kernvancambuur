@@ -2,31 +2,58 @@
 
 namespace App\Models;
 
+use Carbon\Carbon as DateTime;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Query\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 
+/**
+ * Class User
+ * This is the model class for the table "users"
+ *
+ * @property integer  $id
+ * @property string   $first_name
+ * @property string   $last_name
+ * @property string   $email
+ * @property DateTime $email_verified_at
+ * @property string   $password
+ * @property string   $remember_token
+
+ * @property DateTime $created_at
+ * @property DateTime $updated_at
+ * @mixin Builder
+ */
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+    /**
+     * Gets full name of the user
+     */
+    public function fullName()
+    {
+        return "$this->first_name $this->full_name";
+    }
+
 
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var array
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
         'email',
         'password',
     ];
 
     /**
-     * The attributes that should be hidden for serialization.
+     * The attributes that should be hidden for arrays.
      *
-     * @var array<int, string>
+     * @var array
      */
     protected $hidden = [
         'password',
@@ -34,9 +61,9 @@ class User extends Authenticatable
     ];
 
     /**
-     * The attributes that should be cast.
+     * The attributes that should be cast to native types.
      *
-     * @var array<string, string>
+     * @var array
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
