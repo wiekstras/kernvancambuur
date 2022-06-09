@@ -1,9 +1,9 @@
 <template>
     <div class="row">
-        <div class="col-12">
+        <div class="col-12 col-md-6">
             <DescriptionComponent/>
         </div>
-        <div class="col-12">
+        <div class="col-12 col-md-6">
             <PastSfeeractiesComponent/>
         </div>
         <div class="row">

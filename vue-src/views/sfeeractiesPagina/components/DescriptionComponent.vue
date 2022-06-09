@@ -1,5 +1,5 @@
 <template>
-    <h1 class="d-flex justify-content-center mb-2 mt-2">Sfeeracties</h1>
+    <h1 class="d-flex justify-content-center mb-2 mt-2 justify-content-md-start">Sfeeracties</h1>
     <p class="d-flex fw-bold justify-content-start mb-1 text-danger ">Sfeeracties worden nooit aangekondigd</p>
     <img class="d-none" v-for="(item, index) in items" :key="index" :src="item.image" :alt="alt"/>
     <p class="d-flex justify-content-start mb-1">
