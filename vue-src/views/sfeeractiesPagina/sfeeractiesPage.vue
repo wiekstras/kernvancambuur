@@ -1,15 +1,13 @@
 <template>
     <div class="row">
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 col-lg-7 col-xxl-8">
             <DescriptionComponent/>
         </div>
-        <div class="col-12 col-md-6">
+        <div class="col-12 col-md-6 col-lg-5 col-xxl-4">
             <PastSfeeractiesComponent/>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <TimelineComponent/>
-            </div>
+        <div class="col-12">
+            <TimelineComponent/>
         </div>
     </div>
 </template>
