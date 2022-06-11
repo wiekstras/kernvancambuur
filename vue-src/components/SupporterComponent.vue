@@ -2,36 +2,43 @@
   <!-- Onze supporters start -->
   <div class="container onze-supporters" style="text-align: center;">
     <h1> Onze supporters</h1>
-    <agile :slidesToShow="4" :centerMode="true" :dots="false">
-      <div class="slide">
-        <img src="https://picsum.photos/id/237/200">
-      </div>
+  <carousel :items-to-show="4" :wrapAround="true" :autoplay="5000">
+    <slide v-for="slide in supporters" :key="slide">
+      <img :src="slide.image"/>
+    </slide>
 
-      <div class="slide">
-        <img src="https://picsum.photos/id/231/200">
-      </div>
-
-      <div class="slide">
-        <img src="https://picsum.photos/id/230/200">
-      </div>
-
-      <div class="slide">
-        <img src="https://picsum.photos/id/232/200">
-      </div>
-
-    </agile>
+    <template #addons>
+      <navigation />
+    </template>
+  </carousel>
   </div>
   <!-- Onze supporters end -->
 </template>
 <script>
-import { VueAgile } from 'vue-agile'
+import 'vue3-carousel/dist/carousel.css';
+import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 
 export default {
-      components: {
-    agile: VueAgile
+  name: 'App',
+  components: {
+    Carousel,
+    Slide,
+    Pagination,
+    Navigation,
   },
-    
-}
+  data(){
+    return{
+      supporters: [
+        {image: 'https://picsum.photos/id/521/200'},
+        {image: 'https://picsum.photos/id/321/200'},
+        {image: 'https://picsum.photos/id/127/200'},
+        {image: 'https://picsum.photos/id/123/200'},
+        {image: 'https://picsum.photos/id/291/200'},
+        {image: 'https://picsum.photos/id/316/200'}
+      ]
+    }
+  }
+};
 </script>
 <style>
 .slide img {

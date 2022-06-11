@@ -14,8 +14,4 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 app.use(VueAxios, axios)
 
-import VueAgile from 'vue-agile'
-app.use(VueAgile)
-
-
 app.mount('#app')

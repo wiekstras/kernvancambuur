@@ -2,7 +2,7 @@
     <div class="container ons-team" style="text-align: center;">
         <h1>Ons team</h1>
         <div class="row">
-            <div class="col-sm-6 col-md-3" v-for="item in team">
+            <div class="col-sm-12 col-md-6 col-lg-6 col-xl-3" v-for="item in team">
                 <div class="card">
                     <img class="card-img-top" :src="item.image" />
                     <h6 class="card-title">

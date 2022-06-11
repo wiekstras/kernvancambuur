@@ -10,7 +10,7 @@
   <!-- Jumbotron end -->
   <div class="container over-ons">
     <div class="row">
-      <div class="col-sm-12 col-md-8">
+      <div class="col-sm-12 col-md-12 col-lg-8">
         <div class="row">
           <h1>Over Kern van Cambuur</h1>
           <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus, suscipit labore? Debitis dolorem sint
@@ -19,10 +19,10 @@
             quidem adipisci natus odio at sapiente, expedita totam nesciunt ex et!</p>
         </div>
         <div class="row">
-          <div class="col-sm-12 col-md-4">
-            <p>img hier</p>
+          <div class="col-sm-12 col-md-12 col-lg-6">
+            <img class="img-fluid" src="https://picsum.photos/id/521/1000">
           </div>
-          <div class="col-sm-12 col-md-8">
+          <div class="col-sm-12 col-md-12 col-lg-6">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequuntur tenetur, sequi repellendus assumenda
             doloribus ipsa cumque. Quo alias autem temporibus minima quae facilis dolores reprehenderit, fuga doloremque
             molestias, totam omnis saepe tempora incidunt praesentium atque. Beatae error natus rerum et. Hic, tempore
@@ -40,6 +40,7 @@
   </div>
   <SupporterComponent/>
   <OnsTeamComponent/>
+
 </template>
 <script>
 import OnsTeamComponent from './components/OnsTeamComponent.vue';
@@ -48,7 +49,7 @@ import HeadlinesComponent from '../../components/HeadlinesComponent.vue';
 
 export default {
     name: "OverOns",
-    components: {OnsTeamComponent, SupporterComponent, HeadlinesComponent }
+    components: {OnsTeamComponent,SupporterComponent, HeadlinesComponent }
 }
 </script>
 <style>
