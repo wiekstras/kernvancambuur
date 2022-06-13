@@ -9,9 +9,13 @@
 import Navbar from '@/components/Navbar.vue'
 
 export default{
+    name: "Kernvancambuur",
     components: {
         Navbar,
     },
+    created(){
+        this.authStore.setAxios(this.axios);
+    }
 }
 
 </script>

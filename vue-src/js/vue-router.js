@@ -19,5 +19,24 @@ const router = createRouter({
     history: createWebHistory(),
     routes,
 });
+// Add authentication/authorization checks
+
+import {useAuthStore} from '@/store/auth'
+
+router.beforeEach(async (to, from) => {
+    // Setup auth store and wait before navigation
+    const authStore = useAuthStore()
+    await authStore.initialize();
+
+    // If the route has no meta obj, we can skip the auth checks below
+    if (!to.meta) return
+
+    // Check if we require certain auth/rights. Redirect to login if we fail
+    if (to.meta.requiresAuth && !authStore.isLoggedIn) {
+        console.log('Reroute!');
+        return {path: '/login', query: {redirect: to.fullPath}}
+    }
+})
+
 
 export { router }
