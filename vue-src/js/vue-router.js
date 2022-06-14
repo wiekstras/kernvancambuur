@@ -18,6 +18,7 @@ let routes = [
     {path: '/login', component: LogInPage, name: 'LogIn'},
     {path: '/sfeeracties', component: SfeeractiesPage, name: 'SfeeractiesPage'},
     {path: '/dashboard', component: Dashboard, name: 'Dashboard'},
+    {path: '/sfeeracties', component: SfeeractiesPage, name: 'SfeeractiesPage'},
 ];
 
 routes.push(

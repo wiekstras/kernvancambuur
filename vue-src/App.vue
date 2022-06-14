@@ -1,8 +1,6 @@
 <template>
     <Navbar></Navbar>
-    <div class="container-fluid">
         <router-view></router-view>
-    </div>
 </template>
 
 <script>

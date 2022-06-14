@@ -34,7 +34,7 @@ export default defineComponent({
     setup() {
         const form = useForm({
             gebruikersnaam: { rules: ['required'] },
-            wachtwoord: { rules: ['required'] },
+            wachtwoord: { rules: ['required','stringMin:8', 'alphabetsUppercase', 'numbers'] },
         });
 
         const submit = () => {
