@@ -19,14 +19,14 @@ services:
     depends_on:
       - php
       - redis
-      - mysql
+      - kvcmysql
     networks:
       - laravel
 
-  mysql:
+  kvcmysql:
     image: mysql:5.7.29
     platform: linux/x86_64  # No arm64 version is available
-    container_name: kvc1_mysql
+    container_name: kvcmysql
     restart: unless-stopped
     tty: true
     ports:
@@ -39,7 +39,7 @@ services:
       MYSQL_PASSWORD: secret
       MYSQL_ROOT_PASSWORD: secret
       SERVICE_TAGS: dev
-      SERVICE_NAME: mysql
+      SERVICE_NAME: kvcmysql
     networks:
       - laravel
 
@@ -107,7 +107,7 @@ services:
     volumes:
       - ./:/var/www/html:delegated
     depends_on:
-      - mysql
+      - kvcmysql
     working_dir: /var/www/html
     entrypoint: ['php', '/var/www/html/artisan']
     networks:

@@ -14,4 +14,15 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 app.use(VueAxios, axios)
 
+// Pinia state management
+import {createPinia} from 'pinia'
+
+const pinia = createPinia()
+app.use(pinia)
+
+// Add global mixins
+import storeMixin from './mixins/storeMixin'
+
+app.mixin(storeMixin)
+
 app.mount('#app')

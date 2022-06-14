@@ -58,6 +58,19 @@ return [
 
     'asset_url' => env('ASSET_URL'),
 
+     /*
+     |--------------------------------------------------------------------------
+     | Application Frontend URL
+     |--------------------------------------------------------------------------
+     |
+     | Used for generating URLs referring to the frontend. Useful when the
+     | API and frontend run on different subdomains or ports (eg. for local
+     | development)
+     |
+      */
+
+    'url_frontend' => env('APP_FRONTEND_URL','http://localhost:3000'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Timezone
@@ -69,7 +82,7 @@ return [
     |
     */
 
-    'timezone' => 'UTC',
+    'timezone' => 'Europe/Amsterdam',
 
     /*
     |--------------------------------------------------------------------------
@@ -82,7 +95,7 @@ return [
     |
     */
 
-    'locale' => 'en',
+    'locale' => 'nl',
 
     /*
     |--------------------------------------------------------------------------
