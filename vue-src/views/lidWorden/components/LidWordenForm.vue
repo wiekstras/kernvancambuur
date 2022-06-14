@@ -71,13 +71,13 @@
                 </p>
             </div>
             <div class="col-6">
-                <label class="label">Telefoon </label>
+                <label class="label">Telefoonnummer</label>
                 <div class="control">
-                    <input v-model="form.fields.telefoon.value" type="tel" placeholder="Telefoon" />
+                    <input v-model="form.fields.telefoon.value" type="tel" placeholder="Telefoonnummer" />
                 </div>
                 <!-- Display error message -->
                 <p>
-                    {{ getFieldError(form.fields.plaats).join(', ') }}
+                    {{ getFieldError(form.fields.telefoon).join(', ') }}
                 </p>
             </div>
         </div>
@@ -109,7 +109,7 @@
         <div class="control">
             <label class="checkbox">
                 <input type="checkbox" v-model="form.terms">
-                I agree to the <a href="#">terms and conditions</a>
+                Ik ga akkoord met de <a href="#">algemene voorwaarden</a>
             </label>
             <p>
                 {{ getFieldError(form.fields.terms).join(', ') }}
@@ -132,8 +132,8 @@ export default defineComponent({
             adres: { rules: ['required',] },
             postcode: { rules: ['required',] },
             plaats: { rules: ['required',] },
-            email: { rules: ['required',] },
-            telefoon: { rules: ['required',] },
+            email: { rules: ['required','email'] },
+            telefoon: { rules: ['required','phone'] },
             geboortedatum: { rules: ['required',] },
             geslacht: { rules: ['required',] },
             terms: { rules: ['required',] },
