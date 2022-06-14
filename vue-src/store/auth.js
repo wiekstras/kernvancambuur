@@ -20,7 +20,7 @@ export const useAuthStore = defineStore('auth', {
             if (this.initialized) return
 
             // Attempt to get and set token from localstorage
-            // console.log('Logged in');
+            console.log('Logged in');
             const token = localStorage.getItem('pl-auth-token-v2')
             if (token) {
                 await this.setToken(token);
