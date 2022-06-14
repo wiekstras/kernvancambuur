@@ -1,12 +1,12 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import HomePage from '@/views/homePagina/HomePage.vue'
-import PageNotFound from "@/views/layout/PageNotFound.vue"
 import OverOnsPage from "@/views/OverOns/OverOnsPage.vue";
 import LidWordenPage from "@/views/LidWorden/LidWordenPage.vue";
 import LogInPage from "@/views/LogIn/LogInPage.vue";
 import PageNotFound from "@/views/layout/PageNotFound.vue";
 import SfeeractiesPage from "@/views/sfeeractiesPagina/sfeeractiesPage.vue";
 import NieuwsBerichtenIndex from "@/views/nieuwsBerichten/index.vue";
+import Dashboard from "@/views/dashboard/index.vue";
 
 
 let routes = [
@@ -17,6 +17,7 @@ let routes = [
     {path: '/lid-worden', component: LidWordenPage, name: 'LidWorden'},
     {path: '/login', component: LogInPage, name: 'LogIn'},
     {path: '/sfeeracties', component: SfeeractiesPage, name: 'SfeeractiesPage'},
+    {path: '/dashboard', component: Dashboard, name: 'Dashboard'},
 ];
 
 routes.push(
