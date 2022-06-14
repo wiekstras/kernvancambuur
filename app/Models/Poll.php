@@ -7,7 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class Poll extends Model
+use Carbon\Carbon as DateTime;
+
+
+/**
+ * Class Poll
+ * This is the model class for the table "Polls"
+ *
+ * @property integer $id
+ * @property integer $user_id
+ * @property string $table
+ *
+ * @property DateTime $created_at
+ * @property DateTime $updated_at
+ */
+class Poll extends AbstractModel
 {
     use HasFactory;
 
@@ -30,4 +44,7 @@ class Poll extends Model
     {
         return $this->hasMany(Option::class);
     }
+
+
+
 }
