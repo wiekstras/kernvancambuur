@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('member_id')->nullable(); // Is null if the address belongs to a volunteer.
+            $table->foreignId('volunteer_id')->nullable(); // Is null if address belongs to a member.
             $table->string('address');
             $table->string('postal_code');
             $table->string('residence');

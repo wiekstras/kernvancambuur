@@ -13,11 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('billing_infos', function (Blueprint $table) {
+        Schema::create('option_poll', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('member_id');
-            $table->decimal('amount', 9, 2);
-            $table->string('account_number', 18); // Length IBAN number.
+            $table->foreignId('option_id');
+            $table->foreignId('poll_id');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('billing_infos');
+        Schema::dropIfExists('option_poll');
     }
 };

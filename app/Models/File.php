@@ -11,11 +11,11 @@ class File extends Model
     use HasFactory;
 
     /**
-     * Many-to-Many relationship on files -> headlines.
+     * Many-to-Many relationship on headlines -> files.
      *
      * @return BelongsToMany
      */
-    public function files(): BelongsToMany
+    public function headlines(): BelongsToMany
     {
         return $this->belongsToMany(Headline::class);
     }

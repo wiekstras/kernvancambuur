@@ -5,6 +5,7 @@ namespace App\Models;
 use Carbon\Carbon as DateTime;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Query\Builder;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -29,6 +30,38 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+
+    /**
+     * One-to-Many relationship on user -> events.
+     *
+     * @return void
+     *
+     */
+    public function events()
+    {
+        $this->hasMany(Event::class);
+    }
+
+    /**
+     * One-to-Many relationship on user -> polls.
+     *
+     * @return void
+     */
+    public function polls()
+    {
+        $this->hasMany(Poll::class);
+    }
+
+    /**
+     * One-to-Many relationship on user -> headlines.
+     *
+     * @return HasMany
+     */
+    public function headlines(): HasMany
+    {
+        return $this->hasMany(Headline::class);
+    }
+
     /**
      * Gets full name of the user
      */

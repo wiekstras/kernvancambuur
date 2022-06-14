@@ -6,17 +6,17 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class BillingInfo extends Model
+class Event extends Model
 {
     use HasFactory;
 
     /**
-     * Relationship for billingInfo -> user
      *
+     * Relationship for events -> user.
      * @return BelongsTo
      */
-    public function member(): BelongsTo
+    public function user(): BelongsTo
     {
-        return $this->BelongsTo(Member::class);
+        return $this->belongsTo(User::class);
     }
 }
