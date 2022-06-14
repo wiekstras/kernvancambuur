@@ -1,56 +1,47 @@
 <template>
-    <form @submit.prevent="console.log(form)" style="width: 50%; justify-content: center; margin: auto;">
+    <form @submit.prevent="loginForm" style="width: 50%; justify-content: center; margin: auto;">
         <h1>Login</h1>
         <div class="row">
             <div class="col-6">
-                <label class="label">Gebruikersnaam</label>
+                <label class="label">Email</label>
                 <div class="control">
-                    <input v-model="form.fields.gebruikersnaam.value" type="text" placeholder="Gebruikersnaam" />
+                    <input v-model="FormDataUser.email" type="text" placeholder="Email" />
                 </div>
-                <!-- Display error message -->
-                <p>
-                    {{ getFieldError(form.fields.gebruikersnaam).join(', ') }}
-                </p>
             </div>
             <div class="col-6">
                 <label class="label">Wachtwoord</label>
                 <div class="control">
-                    <input v-model="form.fields.wachtwoord.value" type="password" placeholder="Wachtwoord" />
+                    <input v-model="FormDataUser.password" type="password" placeholder="Wachtwoord" />
                 </div>
-                <!-- Display error message -->
-                <p>
-                    {{ getFieldError(form.fields.wachtwoord).join(', ') }}
-                </p>
             </div>
         </div>
+            <button style="justify-content: center; margin: auto;" type="submit">
+            Login
+        </button>
     </form>
 </template>
 <script>
 
-import { defineComponent } from 'vue';
-import { getFieldError, getRawFormData, useForm, validateForm } from 'vue3-form';
-
-export default defineComponent({
-    setup() {
-        const form = useForm({
-            gebruikersnaam: { rules: ['required'] },
-            wachtwoord: { rules: ['required','stringMin:8', 'alphabetsUppercase', 'numbers'] },
-        });
-
-        const submit = () => {
-            if (!validateForm(form)) {
-                // Form is invalid
-                return;
-            }
-
-            // Form is valid...
-            // proceed with submission.
-            const fields = getRawFormData(form);
+export default{
+    name: "LoginPage",
+    data(){
+        return{
+            FormDataUser:{}
         }
-
-        return { form, getFieldError, submit };
     },
-});
+    methods: {
+        async loginForm(){
+            try {
+                const response = (await this.axios.post('/v1/auth/login',this.FormDataUser)).data
+                await this.authStore.setToken(response.access_token)
+            } catch {
+
+            }
+        }
+    }
+       
+    
+};
 </script>
 <style>
 </style>
