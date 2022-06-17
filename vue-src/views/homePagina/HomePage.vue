@@ -81,22 +81,42 @@
                 <h2>Onze Partners</h2>
                 <p>Een organisatie met ruim 125 vrijwilligers vraagt om een duidelijke structuur.<br>Daarom heeft de Kern van Cambuur een bestuur en kent daarnaast een aantal commissies.</p>
             </div>
+            <div class="row">
+              <div class="col-md-3">
+              <img src="/vue-src/assets/partners/kidsclub.jpg" alt="">
+            </div>
+            <div class="col-md-3">
+              <img src="/vue-src/assets/partners/supporterscollectie.jpg" alt="">
+            </div>
+            <div class="col-md-3">
+              <img src="/vue-src/assets/partners/vanDijk.jpg" alt="">
+            </div>
+            <div class="col-md-3">
+              <img src="/vue-src/assets/partners/adnoise.jpg" alt="">
+            </div>
+          </div>
         </div>
     </div>
-</div>
-
-
+  </div>
+ <HomeHeadlines />
+ <TheFooter/>
 </template>
 
+
 <script>
-export default {
-    name: "HomePage"
-}
+
+  import HomeHeadlines from './components/HomeHeadlines.vue';
+  import TheFooter from '../../components/TheFooter.vue';
+
+  export default {
+      name: "HomePage",
+      components: {HomeHeadlines,TheFooter}
+  }
+
+
 </script>
 
 <style scoped>
-
-
 .cbg {
     /* background: #00245a url("../vue-src/assets/body.png") no-repeat 50% 0%;
       background-repeat: no-repeat;
@@ -206,4 +226,44 @@ export default {
    color:#ffffff;
 }
 
+.partners {
+    padding: 56px 0px 77px 0px;
+    background-color: #F8F8F8;
+}
+
+.partners img {
+    vertical-align: middle;
+    width: 253px;
+    height: 261px;
+    border: 2px solid #FAE300;
+    object-fit: cover;
+    border-radius: 7px;
+}
+
+.partners h2 {
+  font-size: 39px;
+}
+
+@media only screen and (max-width: 767px) {
+  .box {
+    padding:0px;
+  }
+
+  .papier_block button {
+    margin-bottom:20px;
+  }
+
+  .box2 {
+    transform:inherit;
+    background-position: 0px;
+  }
+
+  .box2 img {
+    display: none;
+  }
+
+  footer .btn-outline-primary {
+    margin-right: 0px!important;
+  }
+}
 </style>
