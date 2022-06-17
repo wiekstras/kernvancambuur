@@ -1,5 +1,4 @@
 <template>
-
   <div class="bg-image">
     <div class="topbar">
     <div class="container">
@@ -37,7 +36,8 @@
         </div>
 
           <ul class="navbar-nav ul-one mx-auto">
-                <img class="logo" src="../assets/logo-kvc.png">
+            <img class="logo" src="../assets/logo-kvc.png">
+            <img class="logo_text  " src="../assets/text-version.png">
           </ul>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -67,10 +67,25 @@
             <a class="nav-link" href="/Nieuws">Nieuws</a>
           </li>
         </ul>
+      
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="htext">
+      <div class="row">
+        <div class="col-lg-8 col-md-7">
+           <h2>Supportvereniging</h2>
+           <h1>SCS Kern van Cambuur</h1>
+        </div>
+        <div class="col-lg-4 col-md-5 mt-4 text-center buttons">
+           <button type="button" class="btn btn-outline-primary">Word lid</button>
+           <button type="button" class="btn btn-outline-secondary">Steun ons</button>
         </div>
       </div>
-    </nav>
+    </div>
   </div>
+</div>
 
 </template>
 
@@ -166,7 +181,7 @@ nav .logo {
 
 nav .navbar-nav .nav-link {
     font-weight: 500;
-    font-size: 14px;
+    font-size: 16px;
     margin: 0px 2px;
     color:#ffffff;
     text-shadow:0px 1px 2px black;
@@ -262,6 +277,48 @@ nav .navbar-nav .nav-link {
     opacity: 1;
 }
 
+/* Heading text + buttons */
+.htext {
+  color:#fff;
+  padding-top:58px;
+}
+
+.htext h2 {
+  color:#FAE300!important;
+  text-shadow: 0px 1px 2px black;
+}
+
+.htext h1 {
+  text-shadow: 0px 1px 2px black;
+}
+
+.btn {
+  border-radius: 1px;
+  text-transform: uppercase;
+  padding: 5px 21px;
+  font-size:20px;
+}
+
+.btn-outline-primary {
+    margin-right: 20px;
+    color: #fff;
+    border-color: #FAE300;
+}
+
+.btn-outline-secondary {
+    color: #ffffff;
+    border-color: #246DB9;
+}
+
+.btn-outline-secondary:hover {
+    color: #000;
+    background-color: #246DB9;
+}
+
+.btn-outline-primary:hover {
+    background-color: #FAE300;
+    color: #000;
+}
 
 /* Media queries */
 
@@ -274,6 +331,19 @@ nav .navbar-nav .nav-link {
   margin-left:21px!important;
  }
 
+  .logo {
+    display:none;
+  }
+
+ .logo_text {
+  display: block !important;
+ }
+}
+
+@media only screen and (max-width: 17000px) {
+   .logo_text {
+    display:none;
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -282,6 +352,16 @@ nav .navbar-nav .nav-link {
       width: 270px;
       height: 176px; 
   }
+
+  .htext {
+    padding-top:29px;
+    text-align: center;
+  }
+
+  .htext .buttons {
+    margin-top:13px!important;
+  }
+
 }
 
 </style>
