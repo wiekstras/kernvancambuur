@@ -20,8 +20,13 @@ export default{
 
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
+   font-family: fantasy;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+#app h2,h3,h4,h5,h6 {
+    color: #246DB9;
+}
+
 </style>
