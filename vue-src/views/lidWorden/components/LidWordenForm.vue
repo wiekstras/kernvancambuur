@@ -1,5 +1,20 @@
 <template>
-    <form @submit.prevent="console.log(form)" style="width: 50%; justify-content: center; margin: auto;">
+    <Modal v-show="isModalVisible" @close="closeModal">
+        <template v-slot:header>
+            <p v-if="this.requestResponse === true">Uw aanmelding wordt verwerkt.</p>
+            <p v-else>Fout</p>
+        </template>
+        <template v-slot:body>
+            <p v-if="this.requestResponse === true">
+                <b>Wat nu?</b><br>
+                Uw aanmelding wordt verwerkt door de administatie, u krijgt later een mail met meer informatie
+                over uw aanmelding
+            </p>
+            <p v-else>Er ging iets mis tijdens het aanmelden, probeer het later opnieuw</p>
+        </template>
+    </Modal>
+
+    <form @submit.prevent="submit" style="width: 50%; justify-content: center; margin: auto;">
         <h1>Lid worden</h1>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, libero facere omnis nulla praesentium
             suscipit molestias atque neque reiciendis sunt!</p>
@@ -7,103 +22,67 @@
             <div class="col-6">
                 <label class="label">Naam</label>
                 <div class="control">
-                    <input v-model="form.fields.voornaam.value" type="text" placeholder="Voornaam" />
+                    <input v-model="form.voornaam" type="text" placeholder="Voornaam" />
                 </div>
-                <!-- Display error message -->
-                <p>
-                    {{ getFieldError(form.fields.voornaam).join(', ') }}
-                </p>
             </div>
             <div class="col-6">
                 <label class="label"> </label>
                 <div class="control">
-                    <input v-model="form.fields.achternaam.value" type="text" placeholder="Achternaam" />
+                    <input v-model="form.achternaam" type="text" placeholder="Achternaam" />
                 </div>
-                <!-- Display error message -->
-                <p>
-                    {{ getFieldError(form.fields.achternaam).join(', ') }}
-                </p>
             </div>
         </div>
         <div class="row">
             <div class="col-12">
                 <label class="label">Straat + huisnummer</label>
                 <div class="control">
-                    <input v-model="form.fields.adres.value" type="text" placeholder="Adres" />
+                    <input v-model="form.adres" type="text" placeholder="Adres" />
                 </div>
-                <!-- Display error message -->
-                <p>
-                    {{ getFieldError(form.fields.adres).join(', ') }}
-                </p>
             </div>
         </div>
         <div class="row">
             <div class="col-6">
                 <label class="label">Postcode</label>
                 <div class="control">
-                    <input v-model="form.fields.postcode.value" type="text" placeholder="Postcode" />
+                    <input v-model="form.postcode" type="text" placeholder="Postcode" />
                 </div>
-                <!-- Display error message -->
-                <p>
-                    {{ getFieldError(form.fields.postcode).join(', ') }}
-                </p>
             </div>
             <div class="col-6">
                 <label class="label">Plaats </label>
                 <div class="control">
-                    <input v-model="form.fields.plaats.value" type="text" placeholder="Plaats" />
+                    <input v-model="form.plaats" type="text" placeholder="Plaats" />
                 </div>
-                <!-- Display error message -->
-                <p>
-                    {{ getFieldError(form.fields.plaats).join(', ') }}
-                </p>
             </div>
         </div>
         <div class="row">
             <div class="col-6">
                 <label class="label">E-mail</label>
                 <div class="control">
-                    <input v-model="form.fields.email.value" type="email" placeholder="E-mail" />
+                    <input v-model="form.email" type="email" placeholder="E-mail" />
                 </div>
-                <!-- Display error message -->
-                <p>
-                    {{ getFieldError(form.fields.email).join(', ') }}
-                </p>
             </div>
             <div class="col-6">
                 <label class="label">Telefoonnummer</label>
                 <div class="control">
-                    <input v-model="form.fields.telefoon.value" type="tel" placeholder="Telefoonnummer" />
+                    <input v-model="form.telefoon" type="text" placeholder="Telefoonnummer" />
                 </div>
-                <!-- Display error message -->
-                <p>
-                    {{ getFieldError(form.fields.telefoon).join(', ') }}
-                </p>
             </div>
         </div>
         <div class="row">
             <div class="col-6">
                 <label class="label">Geboortedatum</label>
                 <div class="control">
-                    <input v-model="form.fields.geboortedatum.value" type="date" placeholder="Geboortedatum" />
+                    <input v-model="form.geboortedatum" type="date" placeholder="Geboortedatum" />
                 </div>
-                <!-- Display error message -->
-                <p>
-                    {{ getFieldError(form.fields.geboortedatum).join(', ') }}
-                </p>
             </div>
             <div class="col-6">
                 <label class="label">Geslacht </label>
                 <div class="control">
-                    <select v-model="form.fields.geslacht.value" type="text">
+                    <select v-model="form.geslacht" type="text">
                         <option value="man">Man</option>
                         <option value="vrouw">Vrouw</option>
                     </select>
                 </div>
-                <!-- Display error message -->
-                <p>
-                    {{ getFieldError(form.fields.geslacht).join(', ') }}
-                </p>
             </div>
         </div>
         <div class="control">
@@ -111,9 +90,6 @@
                 <input type="checkbox" v-model="form.terms">
                 Ik ga akkoord met de <a href="#">algemene voorwaarden</a>
             </label>
-            <p>
-                {{ getFieldError(form.fields.terms).join(', ') }}
-            </p>
         </div>
         <button style="justify-content: center; margin: auto;" type="submit">
             Verzenden
@@ -122,36 +98,67 @@
 </template>
     <script>
 import { defineComponent } from 'vue';
-import { getFieldError, getRawFormData, useForm, validateForm } from 'vue3-form';
+import Modal from '../components/Modal.vue'
 
 export default defineComponent({
-    setup() {
-        const form = useForm({
-            voornaam: { rules: ['required', 'alphabetsOnly'] },
-            achternaam: { rules: ['required', 'alphabetsOnly'] },
-            adres: { rules: ['required',] },
-            postcode: { rules: ['required',] },
-            plaats: { rules: ['required',] },
-            email: { rules: ['required','email'] },
-            telefoon: { rules: ['required','phone'] },
-            geboortedatum: { rules: ['required',] },
-            geslacht: { rules: ['required',] },
-            terms: { rules: ['required',] },
-        });
-
-        const submit = () => {
-            if (!validateForm(form)) {
+   data() {
+       return {
+           form: {
+               voornaam: '',
+               achternaam: '',
+               adres: '',
+               postcode: '',
+               plaats: '',
+               email: '',
+               telefoon: '',
+               geboortedatum: '',
+               geslacht: '',
+               terms: ''
+           },
+           isModalVisible: false,
+       };
+   },
+    props: {
+       requestResponse: Boolean
+    },
+    methods: {
+        submit(){
+            /*if (!validateForm(this.form)) {
                 // Form is invalid
                 return;
-            }
+            }*/
+            const data = new FormData();
+            data.append('name', this.form.voornaam);
+            data.append('surname', this.form.achternaam);
+            data.append('address', this.form.adres);
+            data.append('residence', this.form.plaats);
+            data.append('postal_code', this.form.postcode);
+            data.append('email', this.form.email);
+            data.append('phone', this.form.telefoon);
+            data.append('date_of_birth', this.form.geboortedatum);
+            data.append('gender', this.form.geslacht);
+            data.append('terms', this.form.terms);
 
-            // Form is valid...
-            // proceed with submission.
-            const fields = getRawFormData(form);
+            this.axios.post('/v1/lid-worden', data).then(response=>{
+                if (response.data.message === 1) {
+                    this.requestResponse = true;
+                    this.showModal();
+                }
+            }).catch(error=>{
+                this.requestResponse = false;
+                this.showModal();
+            });
+        },
+        showModal() {
+            this.isModalVisible = true;
+        },
+        closeModal() {
+            this.isModalVisible = false;
         }
-
-        return { form, getFieldError, submit };
     },
+    components: {
+       Modal
+    }
 });
 </script>
 <style>

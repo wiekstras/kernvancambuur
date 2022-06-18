@@ -4,8 +4,8 @@ namespace App\Models;
 
 use Carbon\Carbon as DateTime;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class Address
@@ -25,6 +25,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Address extends AbstractModel
 {
     use HasFactory;
+    protected $table = 'addresses';
 
     /**
      * One-To-Many relationship on addresses -> volunteers.
@@ -38,6 +39,14 @@ class Address extends AbstractModel
         return $this->belongsToMany(Volunteer::class);
     }
 
-    protected $table = 'addresses';
-
+    /**
+     * Inserts the address that uses the foreign key of the before added volunteer.
+     *
+     * @param $values
+     * @return bool
+     */
+    public function insertAddress($values): bool
+    {
+        return DB::table('addresses')->insert($values);
+    }
 }
