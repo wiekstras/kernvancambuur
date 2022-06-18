@@ -1,8 +1,8 @@
 import {createRouter, createWebHistory} from 'vue-router'
 import HomePage from '@/views/homePagina/HomePage.vue'
-import OverOnsPage from "@/views/OverOns/OverOnsPage.vue";
-import LidWordenPage from "@/views/LidWorden/LidWordenPage.vue";
-import LogInPage from "@/views/LogIn/LogInPage.vue";
+import OverOnsPage from "@/views/overOns/OverOnsPage.vue";
+import LidWordenPage from "@/views/lidWorden/LidWordenPage.vue";
+import LogInPage from "@/views/logIn/LogInPage.vue";
 import PageNotFound from "@/views/layout/PageNotFound.vue";
 import SfeeractiesPage from "@/views/sfeeractiesPagina/sfeeractiesPage.vue";
 import NieuwsBerichtenIndex from "@/views/nieuwsBerichten/index.vue";
