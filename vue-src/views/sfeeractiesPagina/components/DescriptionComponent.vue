@@ -1,8 +1,14 @@
 <template>
-    <h1 class="d-flex justify-content-center mb-2 mt-2 justify-content-md-start">Sfeeracties</h1>
+    <h2 class="d-flex justify-content-center mt-3 mb-0 justify-content-md-start">Sfeeracties</h2>
     <p class="d-flex fw-bold justify-content-start mb-1 text-danger ">Sfeeracties worden nooit aangekondigd</p>
+    <img src="../assets/sfeer.jpg" alt="">
+    <img src="../assets/sfeer2.jpg" alt="">
+    <img src="../assets/sfeer3.jpg" alt="">
+    <img src="../assets/sfeer4.jpg" alt="">
+    <div class="mb-4"></div>
+
     <img class="d-none" v-for="(item, index) in items" :key="index" :src="item.image" :alt="alt"/>
-    <p class="d-flex justify-content-start mb-1">
+    <p class="d-flex justify-content-start mb-4">
         Sfeerteam KVC, onderdeel van de Kern van Cambuur, verzorgt dus al met al inmiddels 6 jaar lang
         diverse sfeer-/tifoacties bij thuiswedstrijden in ons eigen Cambuurstadion. Sfeerteam KVC maakt span,- en
         publieksdoeken 'ambachtelijk', dus met de hand met druppels bier en zweet.
@@ -33,5 +39,7 @@ export default {
 </script>
 
 <style scoped>
-
+.desc img {
+    margin-right:10px;
+}
 </style>
