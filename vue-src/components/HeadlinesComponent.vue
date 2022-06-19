@@ -1,6 +1,6 @@
 <template>
-    <h1>Headlines</h1>
-    <div class="container" style="border: 1;">
+    <h2>Headlines</h2>
+    <div style="border: 1;">
         <ul>
             <li v-for="item in headlines" style="list-style: none; margin: inherit;">
                 <div class="row">
@@ -20,6 +20,18 @@
         </ul>
     </div>
 </template>
+
+<style scoped>
+
+.over-ons h2 {
+    color:#FAE300!important;
+    text-shadow: 0px 1px 2px black;
+}
+ .over-ons ul {
+    padding: 0px;
+ }
+</style>
+
 <script>
 export default{
   data() {
