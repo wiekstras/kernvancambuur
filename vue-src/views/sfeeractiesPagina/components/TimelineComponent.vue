@@ -1,5 +1,5 @@
 <template>
-    <h1 class="d-flex justify-content-center mb-2 mt-2">Tijdlijn</h1>
+    <h2 class="d-flex mb-4 mt-2">Tijdlijn</h2>
     <!-- Desktop View -->
 
     <div class="d-none d-lg-block">
