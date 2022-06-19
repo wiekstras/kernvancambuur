@@ -1,14 +1,7 @@
 <template>
-  <!-- Jumbotron start -->
-  <div class="jumbotron jumbotron-fluid"
-    style="background-image:url('https://cambuur.nl/friksbeheer/wp-content/uploads/2020/05/4659261c-65d7-4ead-bdac-546ca992fbb3-865x487.jpg'); background-size:cover">
-    <div class="container" style="height: 30vh;">
-      <h1 class="display-4">SCS Kern van Cambuur</h1>
-      <p class="lead">Over ons</p>
-    </div>
-  </div>
-  <!-- Jumbotron end -->
-  <div class="container over-ons">
+
+<div class="over-ons">
+  <div class="container">
     <div class="row">
       <div class="col-sm-12 col-md-12 col-lg-8">
         <div class="row">
@@ -38,22 +31,31 @@
       </div>
     </div>
   </div>
+</div>
+
   <SupporterComponent/>
   <OnsTeamComponent/>
+  <TheFooter/>
 
 </template>
 <script>
 import OnsTeamComponent from './components/OnsTeamComponent.vue';
 import SupporterComponent from '../../components/SupporterComponent.vue';
 import HeadlinesComponent from '../../components/HeadlinesComponent.vue';
+import TheFooter from '../../components/TheFooter.vue';
 
 export default {
     name: "OverOns",
-    components: {OnsTeamComponent,SupporterComponent, HeadlinesComponent }
+    components: {OnsTeamComponent,SupporterComponent, HeadlinesComponent, TheFooter }
 }
 </script>
 <style>
-.container {
-  margin-bottom: 5%;
+.over-ons {
+  padding: 56px 0px;
 }
+
+.over-ons h1 {
+  color:#246DB9;
+}
+
 </style>

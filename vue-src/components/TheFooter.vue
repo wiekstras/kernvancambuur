@@ -76,7 +76,7 @@
         <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
           <!-- Links -->
           <h6 class="text-uppercase fw-bold mb-4">
-            Volg ons ook op
+            Benader ons via
           </h6>
           <div class="row">
             <div class="col-md-3">
@@ -146,6 +146,8 @@ footer a:hover {
   text-decoration: underline!important;
   color:#000 !important;
 }
+
+
 
 
 </style>

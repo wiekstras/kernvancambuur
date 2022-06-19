@@ -20,7 +20,7 @@ export default{
 
 <style>
 #app {
-   font-family: fantasy;
+  font-family: system-ui;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
