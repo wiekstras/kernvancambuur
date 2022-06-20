@@ -81,17 +81,17 @@
           <div class="row">
             <div class="col-md-3">
               <p>
-                <a href="https://twitter.com/KernVanCambuur" target="_blank" class="text-reset"><img src="vue-src/assets/twitter.png" alt=""></a>
+                <a href="https://twitter.com/KernVanCambuur" target="_blank" class="text-reset"><img src="@/assets/twitter.png" alt=""></a>
               </p>
             </div>
             <div class="col-md-3">
               <p>
-                <a href="https://www.facebook.com/KernVanCambuur" target="_blank" class="text-reset"><img src="vue-src/assets/facebook.png" alt=""></a>
+                <a href="https://www.facebook.com/KernVanCambuur" target="_blank" class="text-reset"><img src="@/assets/facebook.png" alt=""></a>
               </p>
             </div>
             <div class="col-md-3">
              <p>
-              <a href="mailto:info@kernvancambuur.nl" class="text-reset"><img src="vue-src/assets/email.png" alt=""></a>
+              <a href="mailto:info@kernvancambuur.nl" class="text-reset"><img src="@/assets/email.png" alt=""></a>
               </p>
             </div>
           </div>
