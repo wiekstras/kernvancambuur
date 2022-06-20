@@ -14,7 +14,6 @@
         </div>
     </div>
 </div>
-<TheFooter></TheFooter>
 
 
 </template>
@@ -23,11 +22,10 @@
 import DescriptionComponent from "./components/DescriptionComponent.vue"
 import PastSfeeractiesComponent from "./components/PastSfeeractiesComponent.vue";
 import TimelineComponent from "./components/TimelineComponent.vue";
-import TheFooter from '../../components/TheFooter.vue';
 
 export default {
     name: "sfeeractiesPage",
-    components: { PastSfeeractiesComponent, DescriptionComponent, TimelineComponent, TheFooter }
+    components: { PastSfeeractiesComponent, DescriptionComponent, TimelineComponent }
 }
 </script>
 

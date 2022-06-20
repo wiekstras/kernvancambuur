@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\VolunteerController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -25,6 +26,9 @@ Route::middleware('auth:sanctum')->post('/v1/auth/update-password', [AuthControl
 
 // Volunteer
 Route::post('/v1/lid-worden', [VolunteerController::class, 'store']);
+
+//Contact
+Route::post('/v1/contact', [ContactController::class, 'store']);
 
 // Fallback
 Route::any('/v1/{any}', function() { abort(404, 'page not found'); })->where('any', '.*');

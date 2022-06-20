@@ -99,18 +99,16 @@
     </div>
   </div>
  <HomeHeadlines />
- <TheFooter/>
 </template>
 
 
 <script>
 
   import HomeHeadlines from './components/HomeHeadlines.vue';
-  import TheFooter from '../../components/TheFooter.vue';
 
   export default {
       name: "HomePage",
-      components: {HomeHeadlines,TheFooter}
+      components: {HomeHeadlines}
   }
 
 

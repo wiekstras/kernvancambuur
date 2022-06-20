@@ -1,6 +1,6 @@
 <template>
 <!-- Footer -->
-<footer class="text-center text-lg-start">
+<footer class="text-center text-lg-start" style="margin-top:5%">
   <!-- Section: Social media -->
     <!-- Right -->
     <div>
