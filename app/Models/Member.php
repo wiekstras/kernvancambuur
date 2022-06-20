@@ -7,7 +7,7 @@ use Carbon\Traits\Date;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasOne;
-
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class Member
@@ -36,5 +36,13 @@ class Member extends AbstractModel
         return $this->hasOne(BillingInfo::class);
     }
 
-
+    /**
+     * Inserts a new member.
+     * @param $values
+     * @return int
+     */
+    public function insertMember($values): int
+    {
+        return DB::table('members')->insertGetId($values);
+    }
 }

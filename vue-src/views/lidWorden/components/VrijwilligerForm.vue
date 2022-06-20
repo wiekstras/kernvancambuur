@@ -15,9 +15,7 @@
     </Modal>
 
     <form @submit.prevent="submit" style="width: 50%; justify-content: center; margin: auto;">
-        <h1>Lid worden</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, libero facere omnis nulla praesentium
-            suscipit molestias atque neque reiciendis sunt!</p>
+        <h2>Wordt vrijwilliger</h2>
         <div class="row">
             <div class="col-6">
                 <label class="label">Naam</label>
@@ -103,7 +101,7 @@ import Modal from '../components/Modal.vue'
 export default defineComponent({
    data() {
        return {
-               requestResponse: Boolean,
+           requestResponse: false,
            form: {
                voornaam: '',
                achternaam: '',
@@ -121,10 +119,6 @@ export default defineComponent({
    },
     methods: {
         submit(){
-            /*if (!validateForm(this.form)) {
-                // Form is invalid
-                return;
-            }*/
             const data = new FormData();
             data.append('name', this.form.voornaam);
             data.append('surname', this.form.achternaam);

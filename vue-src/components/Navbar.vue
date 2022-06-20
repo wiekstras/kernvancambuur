@@ -43,7 +43,6 @@
                     <img class="logo" src="../assets/logo-kvc.png">
                     <img class="logo_text  " src="../assets/text-version.png">
                 </ul>
-
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ul-one">
                         <li class="nav-item">
@@ -74,7 +73,6 @@
 
                 </div>
             </div>
-        </nav>
         <div class="container">
             <div class="htext">
                 <div class="row">
@@ -88,6 +86,14 @@
                     </div>
                 </div>
             </div>
+        </div>
+  </nav>
+  <div class="container">
+    <div class="htext">
+      <div class="row">
+        <div class="col-lg-8 col-md-7">
+           <h2>Supportvereniging</h2>
+           <h1>SCS Kern van Cambuur</h1>
         </div>
     </div>
 
@@ -126,7 +132,6 @@ a:hover {
     z-index: -1;
     position: inherit;
 }
-
 /* TopBar */
 
 .topbar {
@@ -326,6 +331,13 @@ nav .navbar-nav .nav-link {
 
 /* Media queries */
 
+@media all and (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu{ display: none; }
+    .navbar .nav-item:hover .nav-link{   }
+    .navbar .nav-item:hover .dropdown-menu{ display: block; }
+    .navbar .nav-item .dropdown-menu{ margin-top:0; }
+}
+
 @media only screen and (max-width: 992px) {
     .social span {
         display: none;
@@ -356,6 +368,12 @@ nav .navbar-nav .nav-link {
         width: 270px;
         height: 176px;
     }
+
+  nav .logo {
+      margin-left: -133px;
+      width: 270px;
+      height: 176px;
+  }
 
     .htext {
         padding-top: 29px;
