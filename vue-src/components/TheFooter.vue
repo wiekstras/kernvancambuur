@@ -58,13 +58,13 @@
             Links
           </h6>
           <p>
-            <a href="#!" class="text-reset">Home</a>
+            <a href="/" class="text-reset">Home</a>
           </p>
           <p>
-            <a href="#!" class="text-reset">KVC</a>
+            <a href="/over-ons" class="text-reset">KVC</a>
           </p>
           <p>
-            <a href="/Contact" class="text-reset">Sfeeracties</a>
+            <a href="/Sfeeracties" class="text-reset">Sfeeracties</a>
           </p>
            <p>
             <a href="/Nieuws" class="text-reset">Nieuws</a>
@@ -81,17 +81,17 @@
           <div class="row">
             <div class="col-md-3">
               <p>
-                <a href="#!" class="text-reset"><img src="vue-src/assets/twitter.png" alt=""></a>
+                <a href="https://twitter.com/KernVanCambuur" target="_blank" class="text-reset"><img src="vue-src/assets/twitter.png" alt=""></a>
               </p>
             </div>
             <div class="col-md-3">
               <p>
-                <a href="#!" class="text-reset"><img src="vue-src/assets/facebook.png" alt=""></a>
+                <a href="https://www.facebook.com/KernVanCambuur" target="_blank" class="text-reset"><img src="vue-src/assets/facebook.png" alt=""></a>
               </p>
             </div>
             <div class="col-md-3">
              <p>
-              <a href="#!" class="text-reset"><img src="vue-src/assets/email.png" alt=""></a>
+              <a href="mailto:info@kernvancambuur.nl" class="text-reset"><img src="vue-src/assets/email.png" alt=""></a>
               </p>
             </div>
           </div>
@@ -103,8 +103,8 @@
         <!-- Grid column -->
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <!-- Links -->
-          <button type="button" class="btn btn-outline-secondary mb-4">Steun ons</button><bR></bR>
-          <button type="button" class="btn btn-outline-primary">Word lid</button>
+          <a href="/lid-worden/vrijwilliger-worden"><button type="button"  class="btn btn-outline-primary">Word lid</button></a><br><br>
+          <a href="/lid-worden/donateur-worden"><button type="button"  class="btn btn-outline-secondary">Steun ons</button></a>
           
         </div>
       </div>

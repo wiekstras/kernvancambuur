@@ -35,4 +35,13 @@ export default {
 </script>
 
 <style scoped>
+h2 {
+    color:rgb(250, 227, 0) !important;
+}
+
+.list-group {
+   cursor:pointer;
+}
+
+
 </style>

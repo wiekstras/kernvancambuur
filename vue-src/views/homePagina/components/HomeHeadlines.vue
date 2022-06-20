@@ -1,5 +1,5 @@
 <template>
-    <div class="headlines">
+  <div class="headlines">
     <div class="container"> 
         <h2 class="text-center mb-4">Headlines</h2>
         <div class="row">
@@ -7,7 +7,7 @@
             <img :src="item.image"/>
             <p class="mt-3 yellow">{{ item.published }}</p>
             <h4>{{ item.title }}</h4>
-            <p>{{ item.text }}</p>
+            <p class="text-white">{{ item.text }}</p>
             <a href="">Lees verder </a>
          </div>            
         </div>

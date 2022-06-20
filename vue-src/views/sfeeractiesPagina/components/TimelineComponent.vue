@@ -1,5 +1,5 @@
 <template>
-    <h2 class="d-flex mb-4 mt-2">Tijdlijn</h2>
+    <h2 class="d-flex mb-4 mt-2 yellow">Tijdlijn</h2>
     <!-- Desktop View -->
 
     <div class="d-none d-lg-block">
@@ -23,5 +23,7 @@ export default {
 </script>
 
 <style scoped>
-
+ h2 {
+    color:rgb(250, 227, 0)!important;
+ }
 </style>

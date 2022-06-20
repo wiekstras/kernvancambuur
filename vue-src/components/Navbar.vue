@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-image" style="  margin-bottom: 5%;">
+  <div class="bg-image" style="padding-bottom: 5%; border-bottom: 3px solid #FAE300;">
     <div class="topbar">
     <div class="container">
       <div class="row">
@@ -36,8 +36,8 @@
         </div>
 
           <ul class="navbar-nav ul-one mx-auto">
-            <img class="logo" src="../assets/logo-kvc.png">
-            <img class="logo_text  " src="../assets/text-version.png">
+            <a href="/"><img class="logo" src="../assets/logo-kvc.png"></a>
+            <a href="/"><img class="logo_text" src="../assets/text-version.png"></a>
           </ul>
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -46,7 +46,7 @@
                   <a class="nav-link" href="/">Home</a>
               </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="/kvc">Kern van cambuur</a>
+                  <a class="nav-link" href="/over-ons">Kern van cambuur</a>
               </li>
                 <li class="nav-item">
                   <a class="nav-link" href="/Sfeeracties">Sfeeracties</a>
@@ -57,16 +57,16 @@
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/Lid-worden">Lid worden</a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/lid-worden/vrijwilliger-worden">vrijwilliger</a></li>
-                    <li><a class="dropdown-item" href="/lid-worden/donateur-worden">donateur</a></li>
+                    <li><a class="dropdown-item" href="/lid-worden/vrijwilliger-worden">Vrijwilliger</a></li>
+                    <li><a class="dropdown-item" href="/lid-worden/donateur-worden">Donateur</a></li>
                 </ul>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/Contact">Contact</a>
             </li>
-              <li class="nav-item">
+              <!-- <li class="nav-item">
               <a class="nav-link" href="/Wedstrijden">Wedstrijden</a>
-            </li>
+            </li> -->
           <li class="nav-item">
             <a class="nav-link" href="/Nieuws">Nieuws</a>
           </li>
@@ -83,8 +83,8 @@
            <h1>SCS Kern van Cambuur</h1>
         </div>
         <div class="col-lg-4 col-md-5 mt-4 text-center buttons">
-           <button type="button" class="btn btn-outline-primary">Word lid</button>
-           <button type="button" class="btn btn-outline-secondary">Steun ons</button>
+           <a href="/lid-worden/vrijwilliger-worden"><button type="button"  class="btn btn-outline-primary">Word lid</button></a>
+           <a href="/lid-worden/donateur-worden"><button type="button"  class="btn btn-outline-secondary">Steun ons</button></a>
         </div>
       </div>
     </div>
