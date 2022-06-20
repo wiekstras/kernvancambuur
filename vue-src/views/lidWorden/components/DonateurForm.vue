@@ -15,9 +15,7 @@
     </Modal>
 
     <form @submit.prevent="submit" style="width: 50%; justify-content: center; margin: auto;">
-        <h1>Lid worden</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, libero facere omnis nulla praesentium
-            suscipit molestias atque neque reiciendis sunt!</p>
+        <h2>Wordt Donateur</h2>
         <div class="row">
             <div class="col-6">
                 <label class="label">Naam</label>
@@ -70,6 +68,20 @@
         </div>
         <div class="row">
             <div class="col-6">
+                <label class="label">Maandelijks over te maken bedrag</label>
+                <div class="control">
+                    <input v-model="form.bedrag" type="text" placeholder="bedrag" />
+                </div>
+            </div>
+            <div class="col-6">
+                <label class="label">Rekeningnummer</label>
+                <div class="control">
+                    <input v-model="form.rekeningnummer" type="text" placeholder="rekeningnummer" />
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6">
                 <label class="label">Geboortedatum</label>
                 <div class="control">
                     <input v-model="form.geboortedatum" type="date" placeholder="Geboortedatum" />
@@ -96,37 +108,34 @@
         </button>
     </form>
 </template>
-    <script>
-import { defineComponent } from 'vue';
-import Modal from '../components/Modal.vue'
 
-export default defineComponent({
-   data() {
-       return {
-           form: {
-               voornaam: '',
-               achternaam: '',
-               adres: '',
-               postcode: '',
-               plaats: '',
-               email: '',
-               telefoon: '',
-               geboortedatum: '',
-               geslacht: '',
-               terms: ''
-           },
-           isModalVisible: false,
-       };
-   },
-    props: {
-       requestResponse: Boolean
+<script>
+import Modal from "./Modal.vue";
+
+export default {
+    name: "DonateurForm",
+    data() {
+        return {
+            requestResponse: false,
+            form: {
+                voornaam: '',
+                achternaam: '',
+                adres: '',
+                postcode: '',
+                plaats: '',
+                email: '',
+                telefoon: '',
+                geboortedatum: '',
+                geslacht: '',
+                bedrag: '',
+                rekeningnummer: '',
+                terms: ''
+            },
+            isModalVisible: false,
+        }
     },
     methods: {
-        submit(){
-            /*if (!validateForm(this.form)) {
-                // Form is invalid
-                return;
-            }*/
+        submit() {
             const data = new FormData();
             data.append('name', this.form.voornaam);
             data.append('surname', this.form.achternaam);
@@ -136,10 +145,12 @@ export default defineComponent({
             data.append('email', this.form.email);
             data.append('phone', this.form.telefoon);
             data.append('date_of_birth', this.form.geboortedatum);
+            data.append('account_number', this.form.rekeningnummer);
             data.append('gender', this.form.geslacht);
+            data.append('amount', this.form.bedrag);
             data.append('terms', this.form.terms);
 
-            this.axios.post('/v1/lid-worden', data).then(response=>{
+            this.axios.post('/v1/lid-worden/donateur-worden', data).then(response=>{
                 if (response.data.message === 1) {
                     this.requestResponse = true;
                     this.showModal();
@@ -157,13 +168,11 @@ export default defineComponent({
         }
     },
     components: {
-       Modal
+        Modal
     }
-});
-</script>
-<style>
-.row .control input,
-.row .control select {
-    width: 100%;
 }
+</script>
+
+<style scoped>
+
 </style>
