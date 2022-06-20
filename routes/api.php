@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\MemberController;
 use App\Http\Controllers\VolunteerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -24,7 +25,10 @@ Route::middleware('auth:sanctum')->post('/v1/auth/update', [AuthController::clas
 Route::middleware('auth:sanctum')->post('/v1/auth/update-password', [AuthController::class, 'updatePassword']);
 
 // Volunteer
-Route::post('/v1/lid-worden', [VolunteerController::class, 'store']);
+Route::post('/v1/lid-worden/vrijwilliger-worden', [VolunteerController::class, 'store']);
+
+// Member
+Route::post('/v1/lid-worden/donateur-worden', [MemberController::class, 'store']);
 
 // Fallback
 Route::any('/v1/{any}', function() { abort(404, 'page not found'); })->where('any', '.*');
