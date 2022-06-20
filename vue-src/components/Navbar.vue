@@ -52,10 +52,14 @@
                   <a class="nav-link" href="/Sfeeracties">Sfeeracties</a>
               </li>
           </ul>
-        
-          <ul class="login navbar-nav ul-two ms-auto">        
-            <li class="nav-item">
-                <a class="nav-link" href="/Lid-worden">Lid worden</a>
+
+          <ul class="login navbar-nav ul-two ms-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/Lid-worden">Lid worden</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/lid-worden/vrijwilliger-worden">vrijwilliger</a></li>
+                    <li><a class="dropdown-item" href="/lid-worden/donateur-worden">donateur</a></li>
+                </ul>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/Contact">Contact</a>
@@ -67,7 +71,7 @@
             <a class="nav-link" href="/Nieuws">Nieuws</a>
           </li>
         </ul>
-      
+
       </div>
     </div>
   </nav>
@@ -115,7 +119,7 @@ a:hover {
 /* Background img */
 
 .bg-image {
-  background-image: url("./vue-src/assets/body-bg.jpg");
+  background-image: url("/vue-src/assets/body-bg.jpg");
   min-height: 390px;
   background-repeat: no-repeat;
   background-size: cover;
@@ -322,6 +326,13 @@ nav .navbar-nav .nav-link {
 
 /* Media queries */
 
+@media all and (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu{ display: none; }
+    .navbar .nav-item:hover .nav-link{   }
+    .navbar .nav-item:hover .dropdown-menu{ display: block; }
+    .navbar .nav-item .dropdown-menu{ margin-top:0; }
+}
+
 @media only screen and (max-width: 992px) {
  .social span {
   display:none;
@@ -350,7 +361,7 @@ nav .navbar-nav .nav-link {
   nav .logo {
       margin-left: -133px;
       width: 270px;
-      height: 176px; 
+      height: 176px;
   }
 
   .htext {
