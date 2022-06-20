@@ -5,7 +5,10 @@
           <h1 class="m-0 d-flex justify-content-start">Donateurs</h1>
         </div>
       </div>
+  </div>
+  <div class="container" style="padding: 56px 0px;">
     <div class="row">
+      <h1>Lid worden</h1>
       <div class="col-lg-6" style="display: flex; vertical-align: middle; margin: auto;">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. A tempore dolores laborum aliquid mollitia! Consectetur
         veniam nisi autem natus aspernatur laudantium nulla, voluptatibus repudiandae odit eaque ad, magni debitis earum
@@ -95,6 +98,9 @@ export default{
 </script>
 <style scoped>
 .btn {
-  background: #FAE300;
+    background: #FAE300;
+}
+h1{
+  color:#246DB9;
 }
 </style>

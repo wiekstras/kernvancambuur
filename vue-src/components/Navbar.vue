@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-image">
+  <div class="bg-image" style="  margin-bottom: 5%;">
     <div class="topbar">
     <div class="container">
       <div class="row">
@@ -114,17 +114,6 @@ a:hover {
 
 .container {
     margin-bottom:0%!important;
-}
-
-/* Background img */
-
-.bg-image {
-  background-image: url("/vue-src/assets/body-bg.jpg");
-  min-height: 390px;
-  background-repeat: no-repeat;
-  background-size: cover;
-  z-index: -1;
-  position: inherit;
 }
 
 /* TopBar */

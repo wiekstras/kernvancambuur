@@ -1,7 +1,8 @@
 <template>
-    <div class="container-fluid">
+    <div class="sfeeracties">
+      <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-7 col-xxl-8">
+            <div class="col-12 col-md-6 col-lg-7 col-xxl-8 desc">
                 <DescriptionComponent />
             </div>
             <div class="col-12 col-md-6 col-lg-5 col-xxl-4">
@@ -12,6 +13,9 @@
             </div>
         </div>
     </div>
+</div>
+
+
 </template>
 
 <script>
@@ -26,4 +30,11 @@ export default {
 </script>
 
 <style scoped>
+.sfeeracties {
+    padding: 34px 0px;
+}
+
+h2 {
+    font-size: 35px;
+}
 </style>

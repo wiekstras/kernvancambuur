@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\VolunteerController;
+use App\Http\Controllers\ContactController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -29,6 +30,9 @@ Route::post('/v1/lid-worden/vrijwilliger-worden', [VolunteerController::class, '
 
 // Member
 Route::post('/v1/lid-worden/donateur-worden', [MemberController::class, 'store']);
+
+//Contact
+Route::post('/v1/contact', [ContactController::class, 'store']);
 
 // Fallback
 Route::any('/v1/{any}', function() { abort(404, 'page not found'); })->where('any', '.*');

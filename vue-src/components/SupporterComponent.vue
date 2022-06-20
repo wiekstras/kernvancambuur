@@ -1,20 +1,26 @@
 <template lang="">
   <!-- Onze supporters start -->
-  <div class="container onze-supporters" style="text-align: center;">
-    <h1> Onze supporters</h1>
+  <div class="onze-supporters">
+    <div class="container">
+    <h2> Onze supporters</h2>
   <carousel :items-to-show="4" :wrapAround="true" :autoplay="5000">
     <slide v-for="slide in supporters" :key="slide">
-      <img :src="slide.image"/>
+      <img class="img-fluid" :src="slide.image"/>
     </slide>
+
+
 
     <template #addons>
       <navigation />
     </template>
   </carousel>
   </div>
+  </div>
+  
   <!-- Onze supporters end -->
 </template>
 <script>
+
 import 'vue3-carousel/dist/carousel.css';
 import { Carousel, Slide, Pagination, Navigation } from 'vue3-carousel';
 
@@ -29,18 +35,40 @@ export default {
   data(){
     return{
       supporters: [
-        {image: 'https://picsum.photos/id/521/200'},
-        {image: 'https://picsum.photos/id/321/200'},
-        {image: 'https://picsum.photos/id/127/200'},
-        {image: 'https://picsum.photos/id/123/200'},
-        {image: 'https://picsum.photos/id/291/200'},
-        {image: 'https://picsum.photos/id/316/200'}
+        {image: './vue-src/assets/Supporters/s1.jpg'},
+        {image:  './vue-src/assets/Supporters/s2.jpg'},
+        {image:  './vue-src/assets/Supporters/s3.jpg'},
+        {image:  './vue-src/assets/Supporters/s4.jpg'},
+        {image:  './vue-src/assets/Supporters/s5.jpg'},
+        {image:  './vue-src/assets/Supporters/s6.jpg'}
       ]
     }
   }
 };
+
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+}
+
 </script>
 <style>
+
+.onze-supporters {
+    padding: 40px 0px;
+    background-color: #F8F8F8;
+}
+
+.onze-supporters h2 {
+  font-size:39px;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+.carousel__slide {
+  margin: 0px 11px;
+}
+
 .slide img {
   width: 80%;
   height: auto;
