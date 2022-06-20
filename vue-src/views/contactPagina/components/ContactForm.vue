@@ -1,8 +1,7 @@
 <template>
     <form @submit.prevent="submit" style="width: 50%; justify-content: center; margin: auto;">
         <h1>Contactformulier</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facilis, libero facere omnis nulla praesentium
-            suscipit molestias atque neque reiciendis sunt!</p>
+        <p>Stichting Cambuur Supporters (SCS) Kern van Cambuur is er voor alle supporters. Ze wil daarom zoveel mogelijk communiceren met iedereen die iets met Cambuur heeft. Heb je een vraag, heb je een idee, vind je dat iets anders moet of wil je vrijwilliger of donateur worden, laat het ons weten. Je kunt ons schrijven of mailen.</p>
         <div class="row">
             <div class="col-12">
                 <label class="label">Naam</label>
@@ -31,7 +30,7 @@
             <div class="col-12">
                 <label class="label">Onderwerp</label>
                 <div class="control">
-                    <input v-model="form.onderwerp" type="date" placeholder="Onderwerp" />
+                    <input v-model="form.onderwerp" type="text" placeholder="Onderwerp" />
                 </div>
             </div>
         </div>
@@ -39,7 +38,7 @@
             <div class="col-12">
                 <label class="label">Bericht</label>
                 <div class="control">
-                    <input v-model="form.bericht" type="date" placeholder="Bericht" />
+                    <input v-model="form.bericht" type="text" placeholder="Bericht" />
                 </div>
             </div>
         </div>

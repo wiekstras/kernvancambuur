@@ -1,15 +1,17 @@
 <template>
     <Navbar></Navbar>
         <router-view></router-view>
+    <Footer></Footer>
 </template>
 
 <script>
 import Navbar from '@/components/Navbar.vue'
+import Footer from '@/components/TheFooter.vue'
 
 export default{
     name: "Kernvancambuur",
     components: {
-        Navbar,
+        Navbar, Footer
     },
     created(){
         this.authStore.setAxios(this.axios);

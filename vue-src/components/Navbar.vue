@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-image">
+  <div class="bg-image" style="  margin-bottom: 5%;">
     <div class="topbar">
     <div class="container">
       <div class="row">

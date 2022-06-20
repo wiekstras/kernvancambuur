@@ -82,18 +82,16 @@ De Commissie Horeca regelt alle zaken die te maken hebben met supportershome 't 
 
 Vier maal per seizoen komt magazine 't Hertsje uit met boeiende verhalen over spelers, de geschiedenis van Cambuur, scherpe columns, actuele onderwerpen die te maken hebben met Cambuur en zijn supporters en met verslagen en reportages van evenementen die zijn geweest. Ieder lid krijgt het blad gratis. 
   </div>
-  <TheFooter />
 
 </template>
 <script>
 import OnsTeamComponent from './components/OnsTeamComponent.vue';
 import SupporterComponent from '../../components/SupporterComponent.vue';
 import HeadlinesComponent from '../../components/HeadlinesComponent.vue';
-import TheFooter from '../../components/TheFooter.vue';
 
 export default {
   name: "OverOns",
-  components: { OnsTeamComponent, SupporterComponent, HeadlinesComponent, TheFooter }
+  components: { OnsTeamComponent, SupporterComponent, HeadlinesComponent }
 }
 </script>
 <style>
