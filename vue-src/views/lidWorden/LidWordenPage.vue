@@ -1,17 +1,7 @@
 <template>
-  <!-- Jumbotron start -->
-  <div class="jumbotron jumbotron-fluid"
-    style="background-image:url('https://cambuur.nl/friksbeheer/wp-content/uploads/2020/05/4659261c-65d7-4ead-bdac-546ca992fbb3-865x487.jpg'); background-size:cover">
-    <div class="container" style="height: 30vh;">
-      <h1 class="display-4">SCS Kern van Cambuur</h1>
-      <p class="lead">Lid worden</p>
-      <button>Word lid</button>
-      <button>Informatie</button>
-    </div>
-  </div>
-  <!-- Jumbotron end -->
-  <div class="container">
+  <div class="container" style="padding: 56px 0px;">
     <div class="row">
+      <h1>Lid worden</h1>
       <div class="col-lg-6" style="display: flex; vertical-align: middle; margin: auto;">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. A tempore dolores laborum aliquid mollitia! Consectetur
         veniam nisi autem natus aspernatur laudantium nulla, voluptatibus repudiandae odit eaque ad, magni debitis earum
@@ -55,4 +45,7 @@ export default{
 }
 </script>
 <style>
+h1{
+  color:#246DB9;
+}
 </style>
