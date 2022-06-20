@@ -137,6 +137,9 @@ export default defineComponent({
 .row .control select {
     width: 100%;
 }
+.row .control .checkbox input{
+    width: unset
+}
 
 .vrijwilliger h2{
     color:rgb(250, 227, 0)!important;
