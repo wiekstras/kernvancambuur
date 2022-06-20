@@ -32,6 +32,6 @@ export default{
 }
 
 body{
-    background: #00245a url("./vue-src/assets/body-bg.jpg") no-repeat 50% 0%;
+    background: #00245a url("@/assets/body-bg.jpg") no-repeat 50% 0%;
 }
 </style>
