@@ -6,6 +6,7 @@ use Carbon\Carbon as DateTime;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\DB;
 
 /**
  * Class Billing info
@@ -22,7 +23,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class BillingInfo extends AbstractModel
 {
     use HasFactory;
-
+    protected $table = 'billing_infos';
     /**
      * Relationship for billingInfo -> user
      *
@@ -33,6 +34,14 @@ class BillingInfo extends AbstractModel
         return $this->BelongsTo(Member::class);
     }
 
-
-
+    /**
+     * Inserts payment information of new member.
+     *
+     * @param $values
+     * @return bool
+     */
+    public function insertBillingInfo($values): bool
+    {
+        return DB::table('billing_infos')->insert($values);
+    }
 }
