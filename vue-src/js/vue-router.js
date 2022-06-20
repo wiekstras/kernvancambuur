@@ -6,6 +6,8 @@ import LogInPage from "@/views/logIn/LogInPage.vue";
 import PageNotFound from "@/views/layout/PageNotFound.vue";
 import SfeeractiesPage from "@/views/sfeeractiesPagina/sfeeractiesPage.vue";
 import NieuwsBerichtenIndex from "@/views/nieuwsBerichten/index.vue";
+import nieuwsBerichtenDetail from "@/views/nieuwsBerichten/nieuwsBerichtenDetail.vue";
+import nieuwsBerichtenCreate from "@/views/nieuwsBerichten/nieuwsBerichtenCreate.vue";
 import Dashboard from "@/views/dashboard/index.vue";
 import ContactPagina from "@/views/contactPagina/ContactPagina.vue";
 
@@ -14,13 +16,15 @@ let routes = [
     {path: '/', component: HomePage, name: 'HomePage'},
     {path: '/sfeeracties', component: SfeeractiesPage, name: 'SfeeractiesPage'},
     {path: '/nieuws-berichten', component: NieuwsBerichtenIndex, name: 'NieuwsBerichtenIndex'},
+    {path: '/nieuws-berichten/:id', component: nieuwsBerichtenDetail, name: 'nieuwsBerichtenDetail'},
     {path: '/over-ons', component: OverOnsPage, name: 'OverOns'},
     {path: '/lid-worden', component: LidWordenPage, name: 'LidWorden'},
     {path: '/login', component: LogInPage, name: 'LogIn'},
     {path: '/sfeeracties', component: SfeeractiesPage, name: 'SfeeractiesPage'},
     {path: '/dashboard', component: Dashboard, name: 'Dashboard'},
     {path: '/sfeeracties', component: SfeeractiesPage, name: 'SfeeractiesPage'},
-    {path: '/contact', component: ContactPagina, name: 'Contact'}
+    {path: '/contact', component: ContactPagina, name: 'Contact'},
+    {path: '/news-create', component: nieuwsBerichtenCreate, name: 'nieuwsBerichtenCreate'},
 ];
 
 routes.push(

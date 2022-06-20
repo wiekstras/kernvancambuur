@@ -28,4 +28,10 @@ import storeMixin from './mixins/storeMixin'
 
 app.mixin(storeMixin)
 
+//CKEditor
+import CKEditor from '@ckeditor/ckeditor5-vue'
+
+app.use(CKEditor)
+
+
 app.mount('#app')
