@@ -10,10 +10,8 @@
                     <slot name="body">Default body waarde maar kun je aanpassen</slot>
                 </section>
                 <footer class="modal-footer">
-                    <slot name="footer">Default footer waarde maar kun je aanpassen</slot>
-                    <button type="button" class="btn-green" @click="close" aria-label="Close modal">
-                        Default knop waarde maar kun je aanpassen
-                    </button>
+                    <slot name="footer"></slot>
+                    <button type="button" class="btn-green" @click="close" aria-label="Close modal">sluiten</button>
                 </footer>
             </div>
         </div>
