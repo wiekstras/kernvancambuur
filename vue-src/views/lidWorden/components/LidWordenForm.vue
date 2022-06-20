@@ -103,6 +103,7 @@ import Modal from '../components/Modal.vue'
 export default defineComponent({
    data() {
        return {
+               requestResponse: Boolean,
            form: {
                voornaam: '',
                achternaam: '',
@@ -118,9 +119,6 @@ export default defineComponent({
            isModalVisible: false,
        };
    },
-    props: {
-       requestResponse: Boolean
-    },
     methods: {
         submit(){
             /*if (!validateForm(this.form)) {

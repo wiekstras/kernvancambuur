@@ -30,5 +30,7 @@ export default{
 #app h2,h3,h4,h5,h6 {
     color: #246DB9;
 }
-
+body{
+    background: #00245a url("./vue-src/assets/body-bg.jpg") no-repeat 50% 0%;
+}
 </style>
