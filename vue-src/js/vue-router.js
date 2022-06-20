@@ -7,6 +7,7 @@ import PageNotFound from "@/views/layout/PageNotFound.vue";
 import SfeeractiesPage from "@/views/sfeeractiesPagina/sfeeractiesPage.vue";
 import NieuwsBerichtenIndex from "@/views/nieuwsBerichten/index.vue";
 import Dashboard from "@/views/dashboard/index.vue";
+import ContactPagina from "@/views/contactPagina/ContactPagina.vue";
 
 
 let routes = [
@@ -19,6 +20,7 @@ let routes = [
     {path: '/sfeeracties', component: SfeeractiesPage, name: 'SfeeractiesPage'},
     {path: '/dashboard', component: Dashboard, name: 'Dashboard'},
     {path: '/sfeeracties', component: SfeeractiesPage, name: 'SfeeractiesPage'},
+    {path: '/contact', component: ContactPagina, name: 'Contact'}
 ];
 
 routes.push(
