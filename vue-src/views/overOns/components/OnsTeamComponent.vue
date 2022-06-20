@@ -2,23 +2,25 @@
     <div class="ons-team">
         <div class="container">
             <h2>Ons team</h2>
-            <div class="row">
+            <div class="row mb-4">
                 <div style="justify-content: center;margin: auto;" class="col-sm-12 col-md-8 col-lg-8">
-                    <p><b>Een organisatie met ruim 125 vrijwilligers vraagt om een duidelijke structuur. Daarom heeft de
+                    <p class="mb-3">Een organisatie met ruim 125 vrijwilligers vraagt om een duidelijke structuur. Daarom heeft de
                             Kern van
-                            Cambuur een bestuur en kent daarnaast een aantal commissies.</b><br><br>
+                            Cambuur een bestuur en kent daarnaast een aantal commissies.</p>
 
-                        <b>Bestuur</b><br>
+                        <p class="mb-0 yellow fw-bold">Bestuur</p>
 
+                        <p class="mb-0">
                         Het bestuur verzorgt de algehele leiding en neemt besluiten, waarbij alle bestuursleden hun
                         eigen
                         portefeuille hebben.Hieronder zie je de bestuursleden en de portefeuille die ze beheren. Er is
                         een
-                        maandelijkse reguliere bestuursvergadering. Als de situatie daarom vraagt is er vaker overleg.<br>
+                        maandelijkse reguliere bestuursvergadering. Als de situatie daarom vraagt is er vaker overleg.
+                        </p>
 
                         Mochten jullie bespreekpunten hebben voor het overleg gelieve deze dan te mailen naar
-                        <b>info@kernvancambuur.nl</b> of <b>secretaris@kernvancambuur.nl</b>
-                    </p>
+                        <b><a class="yellow" href="mailto:info@kernvancambuur.nl">info@kernvancambuur.nl</a></b> of <b><a class="yellow" href="mailto:secretaris@kernvancambuur.nl">secretaris@kernvancambuur.nl</a></b>
+                   
                 </div>
             </div>
             <div class="row">
@@ -29,7 +31,7 @@
                         <h6 class="card-title">
                             {{ item.name }}
                         </h6>
-                        {{ item.function }}
+                        <p class="text-dark">{{ item.function }}</p>
                     </div>
                 </div>
             </div>
@@ -59,7 +61,7 @@ export default {
 }
 
 .ons-team h2 {
-    margin-bottom: 35px;
+    margin-bottom: 18px;
     text-align: center;
     font-size: 35px;
 }

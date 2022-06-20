@@ -124,4 +124,22 @@ export default defineComponent({
 .row .control select {
     width: 100%;
 }
+
+.contact h1 {
+    color:rgb(250, 227, 0)!important;
+}
+
+.contact p {
+    color:#fff;
+}
+
+.label {
+    color:#fff;
+}
+
+.control {
+        margin-bottom: 15px;
+
+}
+
 </style>

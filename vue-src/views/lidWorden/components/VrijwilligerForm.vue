@@ -15,15 +15,15 @@
     </Modal>
 
     <form @submit.prevent="submit" style="width: 50%; justify-content: center; margin: auto;">
-        <h2>Wordt vrijwilliger</h2>
+        <h2>Word vrijwilliger</h2>
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <label class="label">Naam</label>
                 <div class="control">
                     <input v-model="form.voornaam" type="text" placeholder="Voornaam" />
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <label class="label"> </label>
                 <div class="control">
                     <input v-model="form.achternaam" type="text" placeholder="Achternaam" />
@@ -39,13 +39,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <label class="label">Postcode</label>
                 <div class="control">
                     <input v-model="form.postcode" type="text" placeholder="Postcode" />
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <label class="label">Plaats </label>
                 <div class="control">
                     <input v-model="form.plaats" type="text" placeholder="Plaats" />
@@ -53,13 +53,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <label class="label">E-mail</label>
                 <div class="control">
                     <input v-model="form.email" type="email" placeholder="E-mail" />
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <label class="label">Telefoonnummer</label>
                 <div class="control">
                     <input v-model="form.telefoon" type="text" placeholder="Telefoonnummer" />
@@ -67,13 +67,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <label class="label">Geboortedatum</label>
                 <div class="control">
                     <input v-model="form.geboortedatum" type="date" placeholder="Geboortedatum" />
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <label class="label">Geslacht </label>
                 <div class="control">
                     <select v-model="form.geslacht" type="text">
@@ -85,8 +85,9 @@
         </div>
         <div class="control">
             <label class="checkbox">
-                <input type="checkbox" v-model="form.terms">
-                Ik ga akkoord met de <a href="#">algemene voorwaarden</a>
+                <input class="" type="checkbox" v-model="form.terms">
+                Ik ga akkoord met de <a class="" href="#">algemene voorwaarden</a>
+                
             </label>
         </div>
         <button style="justify-content: center; margin: auto;" type="submit">
@@ -158,4 +159,13 @@ export default defineComponent({
 .row .control select {
     width: 100%;
 }
+
+.vrijwilliger h2{
+    color:rgb(250, 227, 0)!important;
+}
+
+.checkbox {
+    color:#fff;
+}
+
 </style>

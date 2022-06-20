@@ -49,7 +49,7 @@
           <div class="row">
             <div class="col-md-6">
                 <h2 class="mt-5"> Oud papier ophalen </h2>
-                <p class="mt-3">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem.</p>
+                <p class="mt-3 text-white">Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem.</p>
                 <button type="button" class="btn btn-outline-primary mt-2">Meer informatie</button>
             </div>
             <div class="col-md-6 text-end">
@@ -68,7 +68,7 @@
           <img src="/vue-src/assets/text-version.png" alt="">
         </div>
         <div class="col-md-4">
-         <a href=""><h3 class="yellow lid">Word lid</h3></a>
+         <a href="/lid-worden/vrijwilliger-worden"><h3 class="yellow lid">Word lid</h3></a>
         </div>
      </div>
   </div>
@@ -115,12 +115,6 @@
 </script>
 
 <style scoped>
-.cbg {
-    /* background: #00245a url("../vue-src/assets/body.png") no-repeat 50% 0%;
-      background-repeat: no-repeat;
-    background-size: cover; */
-}
-
 .yellow {
     color:#FAE300;
 }
@@ -168,7 +162,7 @@
 .box {
   margin-top: 94px;
   padding: 34px 20px; 
-  border-top: 1px solid;
+  border-top: 2px solid #FAE300;;
   -webkit-transform: skewY(-2.47deg);
   -moz-transform: skewY(-2.47deg);
   -ms-transform: skewY(-2.47deg);
@@ -177,8 +171,16 @@
 }
 
 .papier_block .btn-outline-primary {
-    color: #246DB9;
+    color: #fff;
     border-color: #246DB9;
+}
+
+.papier_block .btn-outline-primary:hover {
+    color: #246DB9;
+}
+
+.papier_block h2 {
+  color:#FAE300!important;
 }
 
  .papier_block .papier {
@@ -191,6 +193,7 @@
   padding: 72px 0px;
   background-position: -2px 220px;
   background-size: cover;
+  border:2px solid #FAE300;
   margin-top: 48px;
   height: 222px;
   margin-bottom: 70px;

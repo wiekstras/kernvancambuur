@@ -1,5 +1,8 @@
 <template>
-    <DonateurForm/>
+    <div class="donateur">
+        <DonateurForm/>
+    </div>
+    
 </template>
 
 <script>
@@ -11,5 +14,8 @@ export default {
 </script>
 
 <style scoped>
+.donateur {
+    padding: 38px 0px;
+}
 
 </style>

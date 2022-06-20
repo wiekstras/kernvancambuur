@@ -34,7 +34,12 @@ export default {
     padding: 34px 0px;
 }
 
-h2 {
+.yellow {
+    color:rgb(250, 227, 0)!important;
+}
+
+.sfeeracties h2 {
     font-size: 35px;
+    color:rgb(250, 227, 0)!important;
 }
 </style>

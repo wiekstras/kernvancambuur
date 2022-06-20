@@ -1,28 +1,23 @@
 <template>
-    <div class="bg-image" style="  margin-bottom: 5%;">
-        <div class="topbar">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-9 col-7">
-                        <div class="social">
-                            <a href="tel:0582152499"><img src="../assets/phone.png"><span>058-2152499</span></a>
-                            <a href="https://goo.gl/maps/kSjGCx21Tx3HaVXy5" target="_blank"><img class="loc" src="../assets/location.png"> <span>Hanckemastins 37, 8925 EC Leeuwarden</span></a>
-                            <a href="mailto:info@kernvancambuur.nl"><img class="email" src="../assets/email.png"><span>info@kernvancambuur.nl</span></a>
-                        </div>
-                    </div>
-                    <div class="search col-md-3 col-5">
-                        <div class="expSearchBox">
-                            <div class="expSearchFrom">
-                                <form action="/Zoek" role="search" class="" method="get">
-                                    <input id="field" type="text" value="" required name="strZoekterm" placeholder="" />
-                                    <div class="close">
-                                        <span class="front"></span>
-                                        <span class="back"></span>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
+  <div class="bg-image" style="padding-bottom: 5%; border-bottom: 3px solid #FAE300;">
+    <div class="topbar">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-9 col-7">
+            <div class="social">
+            <a href="tel:0582152499"><img src="../assets/phone.png"><span>058-2152499</span></a>
+            <a href="https://goo.gl/maps/kSjGCx21Tx3HaVXy5" target="_blank"><img class="loc" src="../assets/location.png"> <span>Hanckemastins 37, 8925 EC Leeuwarden</span></a>
+            <a href="mailto:info@kernvancambuur.nl"><img class="email" src="../assets/email.png"><span>info@kernvancambuur.nl</span></a>
+          </div>
+        </div>
+        <div class="search col-md-3 col-5">
+          <div class="expSearchBox">
+            <div class="expSearchFrom">
+              <form action="/Zoek" role="search" class="" method="get">
+                <input id="field" type="text" value="" required name="strZoekterm" placeholder="" />
+                  <div class="close">
+                    <span class="front"></span>
+                    <span class="back"></span>
                 </div>
             </div>
 
@@ -34,6 +29,58 @@
                         <img src="../assets/square.png">
                     </button>
                 </div>
+
+
+          <ul class="navbar-nav ul-one mx-auto">
+            <a href="/"><img class="logo" src="../assets/logo-kvc.png"></a>
+            <a href="/"><img class="logo_text" src="../assets/text-version.png"></a>
+          </ul>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ul-one">
+            <li class="nav-item">
+                  <a class="nav-link" href="/">Home</a>
+              </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="/over-ons">Kern van cambuur</a>
+              </li>
+                <li class="nav-item">s
+                  <a class="nav-link" href="/Sfeeracties">Sfeeracties</a>
+              </li>
+          </ul>
+
+          <ul class="login navbar-nav ul-two ms-auto">
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/Lid-worden">Lid worden</a>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="/lid-worden/vrijwilliger-worden">Vrijwilliger</a></li>
+                    <li><a class="dropdown-item" href="/lid-worden/donateur-worden">Donateur</a></li>
+                </ul>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/Contact">Contact</a>
+            </li>
+              <!-- <li class="nav-item">
+              <a class="nav-link" href="/Wedstrijden">Wedstrijden</a>
+            </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="/Nieuws">Nieuws</a>
+          </li>
+        </ul>
+
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="htext">
+      <div class="row">
+        <div class="col-lg-8 col-md-7">
+           <h2>Supportvereniging</h2>
+           <h1>SCS Kern van Cambuur</h1>
+        </div>
+        <div class="col-lg-4 col-md-5 mt-4 text-center buttons">
+           <a href="/lid-worden/vrijwilliger-worden"><button type="button"  class="btn btn-outline-primary">Word lid</button></a>
+           <a href="/lid-worden/donateur-worden"><button type="button"  class="btn btn-outline-secondary">Steun ons</button></a>
 
                 <ul class="navbar-nav ul-one mx-auto">
                     <img class="logo" src="../assets/logo-kvc.png">

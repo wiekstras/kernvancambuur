@@ -15,15 +15,15 @@
     </Modal>
 
     <form @submit.prevent="submit" style="width: 50%; justify-content: center; margin: auto;">
-        <h2>Wordt Donateur</h2>
+        <h2>Word Donateur</h2>
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <label class="label">Naam</label>
                 <div class="control">
                     <input v-model="form.voornaam" type="text" placeholder="Voornaam" />
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <label class="label"> </label>
                 <div class="control">
                     <input v-model="form.achternaam" type="text" placeholder="Achternaam" />
@@ -39,13 +39,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <label class="label">Postcode</label>
                 <div class="control">
                     <input v-model="form.postcode" type="text" placeholder="Postcode" />
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <label class="label">Plaats </label>
                 <div class="control">
                     <input v-model="form.plaats" type="text" placeholder="Plaats" />
@@ -53,13 +53,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <label class="label">E-mail</label>
                 <div class="control">
                     <input v-model="form.email" type="email" placeholder="E-mail" />
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <label class="label">Telefoonnummer</label>
                 <div class="control">
                     <input v-model="form.telefoon" type="text" placeholder="Telefoonnummer" />
@@ -67,13 +67,13 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <label class="label">Maandelijks over te maken bedrag</label>
                 <div class="control">
                     <input v-model="form.bedrag" type="text" placeholder="bedrag" />
                 </div>
             </div>
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <label class="label">Rekeningnummer</label>
                 <div class="control">
                     <input v-model="form.rekeningnummer" type="text" placeholder="rekeningnummer" />
@@ -81,7 +81,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-6">
+            <div class="col-12 col-md-6">
                 <label class="label">Geboortedatum</label>
                 <div class="control">
                     <input v-model="form.geboortedatum" type="date" placeholder="Geboortedatum" />
@@ -97,7 +97,7 @@
                 </div>
             </div>
         </div>
-        <div class="control">
+        <div class="control mt-3 mb-3">
             <label class="checkbox">
                 <input type="checkbox" v-model="form.terms">
                 Ik ga akkoord met de <a href="#">algemene voorwaarden</a>
@@ -174,5 +174,9 @@ export default {
 </script>
 
 <style scoped>
+
+.donateur h2 {
+ color:rgb(250, 227, 0)!important;
+}
 
 </style>
