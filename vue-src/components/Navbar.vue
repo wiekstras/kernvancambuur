@@ -6,9 +6,7 @@
                     <div class="col-md-9 col-7">
                         <div class="social">
                             <a href="tel:0582152499"><img src="../assets/phone.png"><span>058-2152499</span></a>
-                            <a href="https://goo.gl/maps/kSjGCx21Tx3HaVXy5" target="_blank"><img class="loc"
-                                                                                                 src="../assets/location.png">
-                                <span>Hanckemastins 37, 8925 EC Leeuwarden</span></a>
+                            <a href="https://goo.gl/maps/kSjGCx21Tx3HaVXy5" target="_blank"><img class="loc" src="../assets/location.png"> <span>Hanckemastins 37, 8925 EC Leeuwarden</span></a>
                             <a href="mailto:info@kernvancambuur.nl"><img class="email" src="../assets/email.png"><span>info@kernvancambuur.nl</span></a>
                         </div>
                     </div>
@@ -16,7 +14,7 @@
                         <div class="expSearchBox">
                             <div class="expSearchFrom">
                                 <form action="/Zoek" role="search" class="" method="get">
-                                    <input id="field" type="text" value="" required name="strZoekterm" placeholder=""/>
+                                    <input id="field" type="text" value="" required name="strZoekterm" placeholder="" />
                                     <div class="close">
                                         <span class="front"></span>
                                         <span class="back"></span>
@@ -32,9 +30,7 @@
         <nav class="navbar navbar-expand-lg">
             <div class="container">
                 <div class="hamburger">
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <img src="../assets/square.png">
                     </button>
                 </div>
@@ -43,6 +39,7 @@
                     <img class="logo" src="../assets/logo-kvc.png">
                     <img class="logo_text  " src="../assets/text-version.png">
                 </ul>
+
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ul-one">
                         <li class="nav-item">
@@ -73,6 +70,7 @@
 
                 </div>
             </div>
+        </nav>
         <div class="container">
             <div class="htext">
                 <div class="row">
@@ -86,14 +84,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-  </nav>
-  <div class="container">
-    <div class="htext">
-      <div class="row">
-        <div class="col-lg-8 col-md-7">
-           <h2>Supportvereniging</h2>
-           <h1>SCS Kern van Cambuur</h1>
         </div>
     </div>
 
@@ -114,24 +104,14 @@ a {
 }
 
 a:hover {
-    text-decoration: underline !important;
-    color: #ffffff !important;
+    text-decoration: underline!important;
+    color:#ffffff!important;
 }
 
 .container {
-    margin-bottom: 0% !important;
+    margin-bottom:0%!important;
 }
 
-/* Background img */
-
-.bg-image {
-
-    min-height: 390px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    z-index: -1;
-    position: inherit;
-}
 /* TopBar */
 
 .topbar {
@@ -143,7 +123,7 @@ a:hover {
 }
 
 .social {
-    margin-top: 9px;
+    margin-top:9px;
 }
 
 .social span {
@@ -154,7 +134,7 @@ a:hover {
 }
 
 .social img {
-    width: 20px;
+    width:20px;
     padding: 10px 0px;
     margin-left: 10px;
 }
@@ -181,19 +161,19 @@ nav .logo {
 }
 
 .navbar-toggler {
-    padding: 0px !important;
+    padding:0px !important;
 }
 
 .navbar-toggler:focus {
-    box-shadow: none !important;
+    box-shadow:none!important;
 }
 
 nav .navbar-nav .nav-link {
     font-weight: 500;
     font-size: 16px;
     margin: 0px 2px;
-    color: #ffffff;
-    text-shadow: 0px 1px 2px black;
+    color:#ffffff;
+    text-shadow:0px 1px 2px black;
 }
 
 /* Search button */
@@ -288,12 +268,12 @@ nav .navbar-nav .nav-link {
 
 /* Heading text + buttons */
 .htext {
-    color: #fff;
-    padding-top: 58px;
+    color:#fff;
+    padding-top:58px;
 }
 
 .htext h2 {
-    color: #FAE300 !important;
+    color:#FAE300!important;
     text-shadow: 0px 1px 2px black;
 }
 
@@ -305,7 +285,7 @@ nav .navbar-nav .nav-link {
     border-radius: 1px;
     text-transform: uppercase;
     padding: 5px 21px;
-    font-size: 20px;
+    font-size:20px;
 }
 
 .btn-outline-primary {
@@ -340,15 +320,15 @@ nav .navbar-nav .nav-link {
 
 @media only screen and (max-width: 992px) {
     .social span {
-        display: none;
+        display:none;
     }
 
     .loc, .email {
-        margin-left: 21px !important;
+        margin-left:21px!important;
     }
 
     .logo {
-        display: none;
+        display:none;
     }
 
     .logo_text {
@@ -358,7 +338,7 @@ nav .navbar-nav .nav-link {
 
 @media only screen and (max-width: 17000px) {
     .logo_text {
-        display: none;
+        display:none;
     }
 }
 
@@ -369,19 +349,13 @@ nav .navbar-nav .nav-link {
         height: 176px;
     }
 
-  nav .logo {
-      margin-left: -133px;
-      width: 270px;
-      height: 176px;
-  }
-
     .htext {
-        padding-top: 29px;
+        padding-top:29px;
         text-align: center;
     }
 
     .htext .buttons {
-        margin-top: 13px !important;
+        margin-top:13px!important;
     }
 
 }
