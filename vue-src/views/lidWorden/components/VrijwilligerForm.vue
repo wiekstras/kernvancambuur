@@ -119,10 +119,6 @@ export default defineComponent({
    },
     methods: {
         submit(){
-            /*if (!validateForm(this.form)) {
-                // Form is invalid
-                return;
-            }*/
             const data = new FormData();
             data.append('name', this.form.voornaam);
             data.append('surname', this.form.achternaam);
