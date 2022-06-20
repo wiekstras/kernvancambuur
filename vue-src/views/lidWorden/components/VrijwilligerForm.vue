@@ -20,13 +20,13 @@
             <div class="col-12 col-md-6">
                 <label class="label">Naam</label>
                 <div class="control">
-                    <input v-model="form.voornaam" type="text" placeholder="Voornaam" />
+                    <input v-model="form.name" type="text" placeholder="Voornaam" />
                 </div>
             </div>
             <div class="col-12 col-md-6">
                 <label class="label"> </label>
                 <div class="control">
-                    <input v-model="form.achternaam" type="text" placeholder="Achternaam" />
+                    <input v-model="form.surname" type="text" placeholder="Achternaam" />
                 </div>
             </div>
         </div>
@@ -34,7 +34,7 @@
             <div class="col-12">
                 <label class="label">Straat + huisnummer</label>
                 <div class="control">
-                    <input v-model="form.adres" type="text" placeholder="Adres" />
+                    <input v-model="form.address" type="text" placeholder="Adres" />
                 </div>
             </div>
         </div>
@@ -42,13 +42,13 @@
             <div class="col-12 col-md-6">
                 <label class="label">Postcode</label>
                 <div class="control">
-                    <input v-model="form.postcode" type="text" placeholder="Postcode" />
+                    <input v-model="form.postal_code" type="text" placeholder="Postcode" />
                 </div>
             </div>
             <div class="col-12 col-md-6">
                 <label class="label">Plaats </label>
                 <div class="control">
-                    <input v-model="form.plaats" type="text" placeholder="Plaats" />
+                    <input v-model="form.residence" type="text" placeholder="Plaats" />
                 </div>
             </div>
         </div>
@@ -62,7 +62,7 @@
             <div class="col-12 col-md-6">
                 <label class="label">Telefoonnummer</label>
                 <div class="control">
-                    <input v-model="form.telefoon" type="text" placeholder="Telefoonnummer" />
+                    <input v-model="form.phone" type="text" placeholder="Telefoonnummer" />
                 </div>
             </div>
         </div>
@@ -70,13 +70,13 @@
             <div class="col-12 col-md-6">
                 <label class="label">Geboortedatum</label>
                 <div class="control">
-                    <input v-model="form.geboortedatum" type="date" placeholder="Geboortedatum" />
+                    <input v-model="form.date_of_birth" type="date" placeholder="Geboortedatum" />
                 </div>
             </div>
             <div class="col-12 col-md-6">
                 <label class="label">Geslacht </label>
                 <div class="control">
-                    <select v-model="form.geslacht" type="text">
+                    <select v-model="form.gender" type="text">
                         <option value="man">Man</option>
                         <option value="vrouw">Vrouw</option>
                     </select>
@@ -87,7 +87,7 @@
             <label class="checkbox">
                 <input class="" type="checkbox" v-model="form.terms">
                 Ik ga akkoord met de <a class="" href="#">algemene voorwaarden</a>
-                
+
             </label>
         </div>
         <button style="justify-content: center; margin: auto;" type="submit">
@@ -104,35 +104,13 @@ export default defineComponent({
        return {
            requestResponse: false,
            form: {
-               voornaam: '',
-               achternaam: '',
-               adres: '',
-               postcode: '',
-               plaats: '',
-               email: '',
-               telefoon: '',
-               geboortedatum: '',
-               geslacht: '',
-               terms: ''
            },
            isModalVisible: false,
        };
    },
     methods: {
         submit(){
-            const data = new FormData();
-            data.append('name', this.form.voornaam);
-            data.append('surname', this.form.achternaam);
-            data.append('address', this.form.adres);
-            data.append('residence', this.form.plaats);
-            data.append('postal_code', this.form.postcode);
-            data.append('email', this.form.email);
-            data.append('phone', this.form.telefoon);
-            data.append('date_of_birth', this.form.geboortedatum);
-            data.append('gender', this.form.geslacht);
-            data.append('terms', this.form.terms);
-
-            this.axios.post('/v1/lid-worden', data).then(response=>{
+            this.axios.post('/v1/lid-worden', this.form).then(response=>{
                 if (response.data.message === 1) {
                     this.requestResponse = true;
                     this.showModal();
