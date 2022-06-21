@@ -1,22 +1,31 @@
 <template>
-<div class="grid grid-cols-4">
-    <div class="col-span-1">
-        <div class="bg-gray-500">
-
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar location -->
+            <div class="col-lg-2 sidebar-location">
+                <Sidebar/>
+            </div>
+            <!-- Content -->
+            <div class="col-lg-10">
+                <router-view></router-view>
+            </div>
         </div>
     </div>
-    <div class="col-span-3">
-
-    </div>
-</div>
 </template>
 
 <script>
+import Sidebar from './components/Sidebar.vue'
 export default {
-    name: "index"
+    name: "index",
+    components: {Sidebar}
 }
 </script>
 
 <style scoped>
-
+.sidebar-location {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    background: #1a202c;
+}
 </style>

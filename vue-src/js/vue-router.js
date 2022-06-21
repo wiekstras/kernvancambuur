@@ -25,7 +25,21 @@ let routes = [
     {path: '/lid-worden/donateur-worden', component: DonateurPage, name: 'DonateurPage'},
     {path: '/login', component: LogInPage, name: 'LogIn'},
     {path: '/sfeeracties', component: SfeeractiesPage, name: 'SfeeractiesPage'},
-    {path: '/dashboard', component: Dashboard, name: 'Dashboard'},
+    {
+        path: '/dashboard',
+        component: Dashboard,
+        children: [
+            {
+                path: 'nieuw-bericht',
+                name: 'NieuwBericht',
+                component: NieuwBericht
+            },
+        ],
+        meta:{
+            hideNavbar: true
+        },
+    },
+
     {path: '/sfeeracties', component: SfeeractiesPage, name: 'SfeeractiesPage'},
     {path: '/contact', component: ContactPagina, name: 'Contact'},
     {path: '/news-create', component: nieuwsBerichtenCreate, name: 'nieuwsBerichtenCreate'},
@@ -44,6 +58,7 @@ const router = createRouter({
 // Add authentication/authorization checks
 
 import {useAuthStore} from '@/store/auth';
+import NieuwBericht from "@/views/dashboard/NieuwBericht.vue";
 
 router.beforeEach(async (to, from) => {
     // Setup auth store and wait before navigation
