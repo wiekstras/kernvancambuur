@@ -1,56 +1,32 @@
 <template>
-    <DataTable :columns="this.columns" :data="this.data"/>
+<<<<<<< HEAD
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Sidebar location -->
+            <div class="col-lg-2 sidebar-location">
+                <Sidebar/>
+            </div>
+            <!-- Content -->
+            <div class="col-lg-10">
+                <router-view></router-view>
+            </div>
+        </div>
+    </div>
 </template>
 
 <script>
-import DataTable from "@/components/DataTable.vue";
-
+import Sidebar from './components/Sidebar.vue'
 export default {
     name: "index",
-    components: {
-      DataTable,
-    },
-    data() {
-        return {
-            columns: [{
-                name: 'Blog tekst',
-                attribute: 'blog_text_stripped',
-                sortable: true,
-            },{
-                name: 'Blog tekst',
-                attribute: 'blog_image_path',
-                sortable: true,
-            }],
-            data: [{
-                name:'test',
-                blog_text_stripped:'test',
-                blog_image_path:'test',
-            },{
-                name:'test',
-                blog_text_stripped:'test',
-                blog_image_path:'test',
-            },{
-                name:'test',
-                blog_text_stripped:'test',
-                blog_image_path:'test',
-            },{
-                name:'test',
-                blog_text_stripped:'test',
-                blog_image_path:'test',
-            },{
-                name:'test',
-                blog_text_stripped:'test',
-                blog_image_path:'test',
-            },{
-                name:'test',
-                blog_text_stripped:'test',
-                blog_image_path:'test',
-            }]
-        }
-    },
+    components: {Sidebar}
 }
 </script>
 
 <style scoped>
-
+.sidebar-location {
+    position: absolute;
+    top:0;
+    bottom: 0;
+    background: #1a202c;
+}
 </style>
