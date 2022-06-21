@@ -1,5 +1,4 @@
 <template>
-<<<<<<< HEAD
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar location -->
@@ -23,10 +22,10 @@ export default {
 </script>
 
 <style scoped>
+.row {
+    height: 100vh;
+}
 .sidebar-location {
-    position: absolute;
-    top:0;
-    bottom: 0;
     background: #1a202c;
 }
 </style>
