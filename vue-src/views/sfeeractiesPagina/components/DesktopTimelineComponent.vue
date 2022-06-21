@@ -48,12 +48,12 @@ export default {
                 {
                     Image: Image2,
                     Date: "14-01-2022",
-                    Description: "We mochten geen vuurwerk meenemen in het stadion maar we deden het toch en kijk het resultaat van de sfeeractie!!"
+                    Description: "DiLorem Ipsum is simply unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.t was een super sfeeractie waar we allemaal stiekem vuurwerk het stadion gingen binnensmokkelen en afsteken"
                 },
                 {
                     Image: Image3,
                     Date: "19-07-2022",
-                    Description: "Bij deze sfeeractie gingen lieten we vlaggen maken in verschillende vormen. De kleur moest wel hetzelfde zijn want we zijn voor cambuur."
+                    Description: "DiLorem Ipsum is simply unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.t was een super sfeeractie waar we allemaal stiekem vuurwerk het stadion gingen binnensmokkelen en afsteken"
                 }
             ]
         }
