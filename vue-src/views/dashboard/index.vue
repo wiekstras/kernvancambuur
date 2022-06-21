@@ -1,4 +1,5 @@
 <template>
+<<<<<<< HEAD
     <div class="container-fluid">
         <div class="row">
             <!-- Sidebar location -->

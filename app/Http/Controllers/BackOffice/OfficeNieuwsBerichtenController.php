@@ -28,7 +28,7 @@ class OfficeNieuwsBerichtenController extends BaseController
      *     description="OK",
      *     @OA\JsonContent(
      *       type="array",
-     *       @OA\Items(ref="#/components/schemas/nieuwsBerichtenCondensed")
+     *       @OA\Items(ref="#/components/schemas/NieuwsBerichtenCondensed")
      *     ),
      *   ),
      * )
@@ -39,13 +39,13 @@ class OfficeNieuwsBerichtenController extends BaseController
         //Todo fix login check
         //abort_if(! $user->, 403, 'User is not logged in');
 
-        return NieuwsBerichtenCondensedResource::collection(NieuwsBerichten::get());
+        return NieuwsBerichtenCondensedResource::collection(NieuwsBerichten::all());
     }
 
     /**
      * @OA\Get (
      *   tags={"officeNieuwsBerichten"},
-     *   operationId="getOfficeNieuwsBerichten",
+     *   operationId="getByID",
      *   security={{"bearerAuth":{}}},
      *   path="/office/news/{id}",
      *   summary="Get Blog by ID",
@@ -75,7 +75,7 @@ class OfficeNieuwsBerichtenController extends BaseController
     /**
      * @OA\Post (
      *   tags={"officeNieuwsBerichten"},
-     *   operationId="getOfficeNieuwsBerichten",
+     *   operationId="createOfficeNieuwsBerichten",
      *   security={{"bearerAuth":{}}},
      *   path="/office/news",
      *   summary="Create news",
@@ -111,7 +111,7 @@ class OfficeNieuwsBerichtenController extends BaseController
     /**
      * @OA\Post (
      *   tags={"officeNieuwsBerichten"},
-     *   operationId="getOfficeNieuwsBerichten",
+     *   operationId="updateOfficeNieuwsBerichten",
      *   security={{"bearerAuth":{}}},
      *   path="/office/news/{id}",
      *   summary="Update News by ID",
@@ -155,7 +155,7 @@ class OfficeNieuwsBerichtenController extends BaseController
     /**
      * @OA\Delete (
      *   tags={"officeNieuwsBerichten"},
-     *   operationId="getOfficeNieuwsBerichten",
+     *   operationId="deleteOfficeNieuwsBerichten",
      *   security={{"bearerAuth":{}}},
      *   path="/office/news/{id}",
      *   summary="Delete news  by ID",
@@ -188,7 +188,7 @@ class OfficeNieuwsBerichtenController extends BaseController
     /**
      * @OA\Post (
      *   tags={"officeNieuwsBerichten"},
-     *   operationId="getOfficeNieuwsBerichten",
+     *   operationId="uploadOfficeNieuwsBerichten",
      *   security={{"bearerAuth":{}}},
      *   path="/office/news/{id}/upload",
      *   summary="Upload a new Image for the given news",
