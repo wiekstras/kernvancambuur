@@ -1,6 +1,7 @@
 <template>
 <div class="container bg-white rounded-1">
-    <span class="ck-content " v-html="blogFormData.blog_text"></span>
+    <img src="@/assets/pieterbos.jpeg" alt="">
+    <span class="ck-content " v-html="FormData.news_text"></span>
 </div>
 </template>
 
@@ -9,12 +10,12 @@ export default {
     name: "nieuwsBerichtenDetail",
     data() {
         return {
-            blogFormData: {},
+            FormData: {},
             imgHeader: "",
         }
     },
     async created() {
-        this.blogFormData = (await this.axios.get('/v1/promolot-blog/latest')).data;
+        this.FormData = (await this.axios.get('/v1/news/latest')).data;
     }
 }
 </script>

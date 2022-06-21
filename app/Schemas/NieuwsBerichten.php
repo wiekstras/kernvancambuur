@@ -33,10 +33,10 @@ class NieuwsBerichten extends BaseResource
      *     readOnly=true
      * )
      * @OA\Property(
-     *     property="blog_text",
+     *     property="news_text",
      *     type="string",
      *     description="HTML rich blog text",
-     *     title="Blog text",
+     *     title="News text",
      * )
      *
      * @param  Request $request

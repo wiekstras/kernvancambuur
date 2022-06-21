@@ -22,7 +22,7 @@ class NieuwsBerichten extends AbstractModel
     {
         // First shrink blog-text 1024 to avoid we need to strip too much, after stripping get the first 256 chars
         return substr(
-            strip_tags(substr($this->blog_text, 0, 1024)),
+            strip_tags(substr($this->news_text, 0, 1024)),
             0,
             256
         );

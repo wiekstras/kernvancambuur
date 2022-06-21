@@ -312,10 +312,311 @@
                     }
                 ]
             }
+        },
+        "/office/news": {
+            "get": {
+                "tags": [
+                    "officeNieuwsBerichten"
+                ],
+                "summary": "Get news",
+                "description": "Return condensed news information",
+                "operationId": "getOfficeNieuwsBerichten",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/NieuwsBerichtenCondensed"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "officeNieuwsBerichten"
+                ],
+                "summary": "Create news",
+                "operationId": "createOfficeNieuwsBerichten",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NieuwsBerichten"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NieuwsBerichten"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/office/news/{id}": {
+            "get": {
+                "tags": [
+                    "officeNieuwsBerichten"
+                ],
+                "summary": "Get Blog by ID",
+                "operationId": "getByID",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the news to get",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NieuwsBerichten"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "officeNieuwsBerichten"
+                ],
+                "summary": "Update News by ID",
+                "operationId": "updateOfficeNieuwsBerichten",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the news to update",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/NieuwsBerichten"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NieuwsBerichten"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "officeNieuwsBerichten"
+                ],
+                "summary": "Delete news  by ID",
+                "operationId": "deleteOfficeNieuwsBerichten",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the news to delete",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "OK"
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/office/news/{id}/upload": {
+            "post": {
+                "tags": [
+                    "officeNieuwsBerichten"
+                ],
+                "summary": "Upload a new Image for the given news",
+                "operationId": "uploadOfficeNieuwsBerichten",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ID of the news to upload the Image to",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "multipart/form-data": {
+                            "schema": {
+                                "required": [
+                                    "image"
+                                ],
+                                "properties": {
+                                    "file": {
+                                        "description": "Image to upload; only jpg and png allowed. Max size 10mb. min 500x500, max 6000x6000",
+                                        "type": "string",
+                                        "format": "binary"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NieuwsBerichten"
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "bearerAuth": []
+                    }
+                ]
+            }
+        },
+        "/news/latest": {
+            "get": {
+                "tags": [
+                    "NieuwsBerichtenController"
+                ],
+                "summary": "Get latest news",
+                "description": "Get latest news by created_at time",
+                "operationId": "getLatestNews",
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/NieuwsBerichten"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
         }
     },
     "components": {
         "schemas": {
+            "NieuwsBerichten": {
+                "title": "News",
+                "description": "News model",
+                "properties": {
+                    "id": {
+                        "title": "ID",
+                        "description": "ID",
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "news_image_path": {
+                        "title": "Image path",
+                        "description": "Path to the image on the server",
+                        "type": "string",
+                        "readOnly": true
+                    },
+                    "news_text": {
+                        "title": "News text",
+                        "description": "HTML rich blog text",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
+            "NieuwsBerichtenCondensed": {
+                "title": "NieuwsBerichtenCondensed",
+                "description": "News model",
+                "properties": {
+                    "id": {
+                        "title": "ID",
+                        "description": "ID",
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "news_image_path": {
+                        "title": "Image path",
+                        "description": "Path to the image on the server",
+                        "type": "string",
+                        "readOnly": true
+                    },
+                    "news_text_stripped": {
+                        "title": "News text",
+                        "description": "Smaller news-text variant, with HTML tags removed",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "User": {
                 "title": "User",
                 "description": "Full User model",
