@@ -52,7 +52,7 @@
                   <a class="nav-link" href="/Sfeeracties">Sfeeracties</a>
               </li>
           </ul>
-        
+
           <ul class="login navbar-nav ul-two ms-auto">
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/Lid-worden">Lid worden</a>
@@ -71,7 +71,7 @@
             <a class="nav-link" href="/Nieuws">Nieuws</a>
           </li>
         </ul>
-      
+
       </div>
     </div>
   </nav>
@@ -287,6 +287,22 @@ nav .navbar-nav .nav-link {
     color: #000;
 }
 /* Media queries */
+
+/* Navbar lid worden drop down (alleen voor desktop). */
+@media all and (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu{
+        display: none;
+        background: #000;
+    }
+    .navbar .nav-item .dropdown-menu li .dropdown-item{
+        color: #fff;
+        background: #000;
+    }
+    .navbar .nav-item:hover .nav-link{   }
+    .navbar .nav-item:hover .dropdown-menu{ display: block; }
+    .navbar .nav-item .dropdown-menu{ margin-top:0; }
+}
+
 @media only screen and (max-width: 992px) {
  .social span {
   display:none;
@@ -310,7 +326,7 @@ nav .navbar-nav .nav-link {
   nav .logo {
       margin-left: -133px;
       width: 270px;
-      height: 176px; 
+      height: 176px;
   }
   .htext {
     padding-top:29px;

@@ -110,7 +110,7 @@ export default defineComponent({
    },
     methods: {
         submit(){
-            this.axios.post('/v1/lid-worden', this.form).then(response=>{
+            this.axios.post('/v1/lid-worden/vrijwilliger-worden', this.form).then(response=>{
                 if (response.data.message === 1) {
                     this.requestResponse = true;
                     this.showModal();
