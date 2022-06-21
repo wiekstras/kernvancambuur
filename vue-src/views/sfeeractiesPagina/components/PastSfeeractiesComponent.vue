@@ -43,5 +43,11 @@ h2 {
    cursor:pointer;
 }
 
+.list-group-item {
+    background: #000;
+    color: #fff;
+    opacity: 0.8;
+}
+
 
 </style>
