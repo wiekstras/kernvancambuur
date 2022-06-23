@@ -23,9 +23,11 @@ export default {
 
 <style scoped>
 .row {
-    height: 100vh;
+    
 }
 .sidebar-location {
     background: #1a202c;
+    overflow-x: scroll;
+    height: 100vh;
 }
 </style>
