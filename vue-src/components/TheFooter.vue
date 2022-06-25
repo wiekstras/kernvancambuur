@@ -103,8 +103,8 @@
         <!-- Grid column -->
         <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
           <!-- Links -->
-          <a href="/lid-worden/vrijwilliger-worden"><button type="button"  class="btn btn-outline-primary">Word lid</button></a><br><br>
-          <a href="/lid-worden/donateur-worden"><button type="button"  class="btn btn-outline-secondary">Steun ons</button></a>
+           <a href="/lid-worden/donateur-worden"><button type="button"  class="btn btn-outline-primary">Word lid</button></a><br><br>
+           <a href="/lid-worden/vrijwilliger-worden"><button type="button"  class="btn btn-outline-secondary">Steun ons</button></a>
           
         </div>
       </div>

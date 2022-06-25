@@ -58,7 +58,7 @@
                 <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/Lid-worden">Lid worden</a>
                 <ul class="dropdown-menu">
                     <li><a class="dropdown-item" href="/lid-worden/vrijwilliger-worden">Vrijwilliger</a></li>
-                    <li><a class="dropdown-item" href="/lid-worden/donateur-worden">Donateur</a></li>
+                    <li><a class="dropdown-item" href="/lid-worden/donateur-worden">Lid</a></li>
                 </ul>
             </li>
             <li class="nav-item">
@@ -83,8 +83,8 @@
            <h1>SCS Kern van Cambuur</h1>
         </div>
         <div class="col-lg-4 col-md-5 mt-4 text-center buttons">
-           <a href="/lid-worden/vrijwilliger-worden"><button type="button"  class="btn btn-outline-primary">Word lid</button></a>
-           <a href="/lid-worden/donateur-worden"><button type="button"  class="btn btn-outline-secondary">Steun ons</button></a>
+           <a href="/lid-worden/donateur-worden"><button type="button"  class="btn btn-outline-primary">Word lid</button></a>
+           <a href="/lid-worden/vrijwilliger-worden"><button type="button"  class="btn btn-outline-secondary">Steun ons</button></a>
         </div>
       </div>
     </div>

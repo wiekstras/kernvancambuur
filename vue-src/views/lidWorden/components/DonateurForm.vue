@@ -15,7 +15,7 @@
     </Modal>
 
     <form @submit.prevent="submit" style="width: 50%; justify-content: center; margin: auto;">
-        <h2>Word Donateur</h2>
+        <h2>Word lid</h2>
         <div class="row">
             <div class="col-12 col-md-6">
                 <label class="label">Naam</label>
