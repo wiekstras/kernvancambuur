@@ -12,6 +12,8 @@ import nieuwsBerichtenDetail from "@/views/nieuwsBerichten/nieuwsBerichtenDetail
 import nieuwsBerichtenCreate from "@/views/nieuwsBerichten/nieuwsBerichtenCreate.vue";
 import Dashboard from "@/views/dashboard/index.vue";
 import ContactPagina from "@/views/contactPagina/ContactPagina.vue";
+import NieuwBericht from "@/views/dashboard/NieuwBericht.vue";
+import Berichten from "@/views/dashboard/Berichten.vue";
 
 
 let routes = [
@@ -25,6 +27,10 @@ let routes = [
     {path: '/lid-worden/donateur-worden', component: DonateurPage, name: 'DonateurPage'},
     {path: '/login', component: LogInPage, name: 'LogIn'},
     {path: '/sfeeracties', component: SfeeractiesPage, name: 'SfeeractiesPage'},
+    {path: '/sfeeracties', component: SfeeractiesPage, name: 'SfeeractiesPage'},
+    {path: '/contact', component: ContactPagina, name: 'Contact'},
+    {path: '/news-create', component: nieuwsBerichtenCreate, name: 'nieuwsBerichtenCreate'},
+
     {
         path: '/dashboard',
         component: Dashboard,
@@ -34,15 +40,17 @@ let routes = [
                 name: 'NieuwBericht',
                 component: NieuwBericht
             },
+            {
+                path: 'berichten',
+                name: 'Berichten',
+                component: Berichten
+            },
         ],
         meta:{
             hideNavbar: true
         },
     },
-
-    {path: '/sfeeracties', component: SfeeractiesPage, name: 'SfeeractiesPage'},
-    {path: '/contact', component: ContactPagina, name: 'Contact'},
-    {path: '/news-create', component: nieuwsBerichtenCreate, name: 'nieuwsBerichtenCreate'},
+    
 ];
 
 routes.push(
@@ -58,7 +66,7 @@ const router = createRouter({
 // Add authentication/authorization checks
 
 import {useAuthStore} from '@/store/auth';
-import NieuwBericht from "@/views/dashboard/NieuwBericht.vue";
+
 
 router.beforeEach(async (to, from) => {
     // Setup auth store and wait before navigation

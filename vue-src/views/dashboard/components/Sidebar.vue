@@ -20,7 +20,7 @@
     </div>
     <div class="row mt-lg-5 options">
         <p class="title mb-2">Contact</p>
-        <p>berichten</p>
+        <router-link to="/dashboard/berichten">Berichten</router-link>
     </div>
     <div class="row mt-lg-5 options">
         <p class="title mb-2">Account</p>

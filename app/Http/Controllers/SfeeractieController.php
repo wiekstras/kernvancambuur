@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class SfeeractieController extends Controller
+class SfeeractieController extends BaseController
 {
     /**
      * Display a listing of the resource.
