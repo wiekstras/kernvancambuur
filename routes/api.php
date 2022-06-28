@@ -49,6 +49,7 @@ Route::post('/v1/lid-worden/donateur-worden', [MemberController::class, 'store']
 
 //Contact
 Route::post('/v1/contact', [ContactController::class, 'store']);
+Route::get('/v1/contact/get', [ContactController::class, 'latest']);
 
 // Fallback
 Route::any('/v1/{any}', function() { abort(404, 'page not found'); })->where('any', '.*');
