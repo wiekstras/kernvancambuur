@@ -53,6 +53,7 @@ Route::get('/v1/member/get', [MemberController::class, 'index']);
 Route::post('/v1/contact', [ContactController::class, 'store']);
 Route::get('/v1/contact/get', [ContactController::class, 'latest']);
 Route::get('/v1/contact/delete/{id}',[ContactController::class, 'destroy']);
+Route::get('/v1/contact/show/{id}', [ContactController::class, 'show']);
 
 // Fallback
 Route::any('/v1/{any}', function() { abort(404, 'page not found'); })->where('any', '.*');

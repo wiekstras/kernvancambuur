@@ -52,7 +52,7 @@ class ContactController extends BaseController {
 
     public function show($id)
     {
-        //
+        return DB::select('select * from contacts where id = ?',[$id]);
     }
 
     public function destroy($id)
