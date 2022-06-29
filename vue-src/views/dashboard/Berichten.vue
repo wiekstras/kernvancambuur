@@ -32,8 +32,9 @@ export default {
         }
     },
     methods: {
-        deleteMessage() {
-            this.axios.get('/v1/contact/delete/2')
+        deleteMessage( ) {
+            const Id = this.item.id
+            this.axios.get('/v1/contact/delete/'+ Id)
         }
     },
     async created() {

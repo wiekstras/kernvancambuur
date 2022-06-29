@@ -571,7 +571,7 @@
         "schemas": {
             "Berichten": {
                 "title": "Berichten",
-                "description": "Berichten model",
+                "description": "Berichten schema",
                 "properties": {
                     "id": {
                         "title": "ID",

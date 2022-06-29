@@ -13,7 +13,6 @@
 <td>{{item.name}}</td>
 <td>{{item.surname}}</td>
 <td>{{item.email}}</td>
-<td>{{item.address.phone}}</td>
     </tr>
   </tbody>
 </table>
