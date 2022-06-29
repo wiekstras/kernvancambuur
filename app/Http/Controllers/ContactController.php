@@ -5,7 +5,6 @@ use Illuminate\Http\JsonResponse;
 use Carbon\Carbon;
 use App\Models\Contact;
 use Mail;
-use App\Schemas\Berichten AS BerichtenResource;
 use Illuminate\Support\Facades\DB;
 
 
@@ -49,6 +48,16 @@ class ContactController extends BaseController {
             $message->from($request->email);
             $message->to('gbussel58@gmail.com', 'Admin')->subject($request->get('subject'));
         });
+    }
+
+    public function show($id)
+    {
+        //
+    }
+
+    public function destroy($id)
+    {
+        DB::delete('delete from contacts where id = ?',[$id]);
     }
 
     public function latest()

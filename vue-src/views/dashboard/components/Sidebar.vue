@@ -14,8 +14,8 @@
     </div>
     <div class="row mt-lg-5 options">
         <p class="title mb-2">Leden</p>
-        <p>donateurs</p>
-        <p>vrijwilligers</p>
+        <router-link to="/dashboard/donateurs">Donateurs</router-link>
+        <router-link to="/dashboard/vrijwilligers">Vrijwilligers</router-link>
         <p>nieuwe aanmeldingen</p>
     </div>
     <div class="row mt-lg-5 options">

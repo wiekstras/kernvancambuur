@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 class VolunteerController extends BaseController
 {
@@ -18,7 +19,7 @@ class VolunteerController extends BaseController
      */
     public function index()
     {
-        //
+        return Volunteer::with('address')->get();
     }
 
     /**

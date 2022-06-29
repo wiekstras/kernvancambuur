@@ -43,13 +43,16 @@ Route::middleware('auth:sanctum')->group(static function() {
 
 // Volunteer
 Route::post('/v1/lid-worden/vrijwilliger-worden', [VolunteerController::class, 'store']);
+Route::get('/v1/volunteer/get', [VolunteerController::class, 'index']);
 
 // Member
 Route::post('/v1/lid-worden/donateur-worden', [MemberController::class, 'store']);
+Route::get('/v1/member/get', [MemberController::class, 'index']);
 
 //Contact
 Route::post('/v1/contact', [ContactController::class, 'store']);
 Route::get('/v1/contact/get', [ContactController::class, 'latest']);
+Route::get('/v1/contact/delete/{id}',[ContactController::class, 'destroy']);
 
 // Fallback
 Route::any('/v1/{any}', function() { abort(404, 'page not found'); })->where('any', '.*');
