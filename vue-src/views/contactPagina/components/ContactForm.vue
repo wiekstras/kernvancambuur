@@ -98,6 +98,7 @@ export default defineComponent({
             this.axios.post('/v1/contact', data).then(response => {
                 if (response.data.message === 1) {
                     this.requestResponse = true;
+                    console.log(data);
                     this.showModal();
                 }
             }).catch(error => {

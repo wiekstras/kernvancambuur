@@ -36,6 +36,11 @@ class Member extends AbstractModel
         return $this->hasOne(BillingInfo::class);
     }
 
+    public function address(): HasOne
+    {
+        return $this->hasOne(Address::class);
+    }
+
     /**
      * Inserts a new member.
      * @param $values

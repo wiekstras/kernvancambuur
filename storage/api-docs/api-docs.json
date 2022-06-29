@@ -569,6 +569,44 @@
     },
     "components": {
         "schemas": {
+            "Berichten": {
+                "title": "Berichten",
+                "description": "Berichten schema",
+                "properties": {
+                    "id": {
+                        "title": "ID",
+                        "description": "ID",
+                        "type": "integer",
+                        "readOnly": true
+                    },
+                    "name": {
+                        "title": "Name",
+                        "description": "name of customer",
+                        "type": "string"
+                    },
+                    "email": {
+                        "title": "Email",
+                        "description": "Email of customer",
+                        "type": "string"
+                    },
+                    "phone": {
+                        "title": "Phone",
+                        "description": "Phonenumber of customer",
+                        "type": "integer"
+                    },
+                    "subject": {
+                        "title": "Subject",
+                        "description": "Subject of the message",
+                        "type": "string"
+                    },
+                    "message": {
+                        "title": "Message",
+                        "description": "The message",
+                        "type": "string"
+                    }
+                },
+                "type": "object"
+            },
             "NieuwsBerichten": {
                 "title": "News",
                 "description": "News model",

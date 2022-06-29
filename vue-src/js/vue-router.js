@@ -14,6 +14,8 @@ import Dashboard from "@/views/dashboard/index.vue";
 import ContactPagina from "@/views/contactPagina/ContactPagina.vue";
 import NieuwBericht from "@/views/dashboard/NieuwBericht.vue";
 import Berichten from "@/views/dashboard/Berichten.vue";
+import Donateurs from "@/views/dashboard/Donateurs.vue";
+import Vrijwilligers from "@/views/dashboard/Vrijwilligers.vue";
 
 
 let routes = [
@@ -44,6 +46,16 @@ let routes = [
                 path: 'berichten',
                 name: 'Berichten',
                 component: Berichten
+            },
+            {
+                path: 'donateurs',
+                name: 'Donateurs',
+                component: Donateurs
+            },
+            {
+                path: 'vrijwilligers',
+                name: 'Vrijwilligers',
+                component: Vrijwilligers
             },
         ],
         meta:{
