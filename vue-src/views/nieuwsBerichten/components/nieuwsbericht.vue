@@ -2,7 +2,7 @@
     <div class="row">
         <div class="col-md-6">
             <template v-for="nieuws in nieuwsberichtenData">
-                <router-link :to="/nieuws-berichten/">
+                <router-link :to="`/nieuws-berichten/${nieuws.id}`">
                     <div class="card mb-3">
                         <img
                             :src="nieuws.news_image_path"
