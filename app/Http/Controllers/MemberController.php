@@ -109,7 +109,7 @@ class MemberController extends BaseController
      */
     public function show($id)
     {
-        //
+        return Member::with('address','billingInfo')->where('id',[$id])->get();
     }
 
     /**
@@ -143,6 +143,6 @@ class MemberController extends BaseController
      */
     public function destroy($id)
     {
-        //
+        DB::delete('delete from members where id = ?',[$id]);
     }
 }

@@ -94,7 +94,7 @@ class VolunteerController extends BaseController
      */
     public function show($id)
     {
-        //
+        return Volunteer::with('address',)->where('id',[$id])->get();
     }
 
     /**
@@ -128,6 +128,6 @@ class VolunteerController extends BaseController
      */
     public function destroy($id)
     {
-        //
+        DB::delete('delete from volunteers where id = ?',[$id]);
     }
 }
