@@ -44,10 +44,14 @@ Route::middleware('auth:sanctum')->group(static function() {
 // Volunteer
 Route::post('/v1/lid-worden/vrijwilliger-worden', [VolunteerController::class, 'store']);
 Route::get('/v1/volunteer/get', [VolunteerController::class, 'index']);
+Route::get('/v1/volunteer/delete/{id}', [VolunteerController::class, 'destroy']);
+Route::get('/v1/volunteer/show/{id}', [VolunteerController::class, 'show']);
 
 // Member
 Route::post('/v1/lid-worden/donateur-worden', [MemberController::class, 'store']);
 Route::get('/v1/member/get', [MemberController::class, 'index']);
+Route::get('/v1/member/delete/{id}', [MemberController::class, 'destroy']);
+Route::get('/v1/member/show/{id}', [MemberController::class, 'show']);
 
 //Contact
 Route::post('/v1/contact', [ContactController::class, 'store']);

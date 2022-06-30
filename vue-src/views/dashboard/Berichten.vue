@@ -11,6 +11,7 @@
         </template>
     </Modal>
     <table class="table">
+        <p v-if="FormData.length < 1"> Er zijn geen berichten </p>
         <thead v-if="FormData.length > 0">
             <tr>
                 <th scope="col">Naam</th>
@@ -32,7 +33,6 @@
             </tr>
 
         </tbody>
-        <p v-else-if="FormData.length < 1"> Er zijn geen berichten </p>
     </table>
 </template>
 
