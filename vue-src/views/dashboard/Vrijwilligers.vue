@@ -49,6 +49,7 @@ export default {
   methods: {
     deleteMember(id) {
       this.axios.get('/v1/volunteer/delete/' + id);
+      this.$router.go();
     },
     async showMore(id) {
       this.UserData = (await this.axios.get('/v1/volunteer/show/' + id)).data;

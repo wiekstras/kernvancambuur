@@ -1,16 +1,9 @@
-<template>
+<template v-if="this.loaded">
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col-sm-9">
-                <nieuwsbericht/>
-                <div class="row">
-                    <div class="col-sm-6">
-                        <nieuwsbericht/>
-                    </div>
-                    <div class="col-sm-6">
-                        <nieuwsbericht/>
-                    </div>
-                </div>
+                        <nieuwsbericht :nieuwsberichtenData="nieuwsberichtenData"/>
+
             </div>
             <div class="col-sm-3">
 
@@ -30,6 +23,17 @@ export default {
         nieuwsbericht,
         sidebar,
         headlines,
+    },
+    data() {
+      return{
+          nieuwsberichtenData: {},
+          loaded: false,
+      }
+    },
+    async created(){
+        this.nieuwsberichtenData = (await this.axios.get('/v1/office/news')).data
+        this.loaded = true;
+        console.log(this.nieuwsberichtenData);
     }
 }
 </script>

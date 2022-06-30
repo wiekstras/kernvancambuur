@@ -47,7 +47,7 @@ class NieuwsBerichtenCondensed extends BaseResource
         return [
             'id'                 => $this->id,
             'news_image_path'    => ! empty($this->news_image_path) ? Storage::disk('public')->url($this->news_image_path) : '',
-            'news_text_stripped' => $this->news_text_stripped,
+            'news_text_stripped' => $this->news_text,
         ];
     }
 }

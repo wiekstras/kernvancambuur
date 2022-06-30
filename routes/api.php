@@ -30,12 +30,12 @@ Route::middleware('auth:sanctum')->post('/v1/auth/update-password', [AuthControl
 
 Route::get('/v1/news/latest', [NieuwsBerichtenController::class, 'latest']);
 Route::get('/v1/office/news', [OfficeNieuwsBerichtenController::class, 'index']);
+Route::get('/v1/office/news/{id}', [OfficeNieuwsBerichtenController::class, 'getById'])->where('id', '[0-9]+');
 
 
 Route::middleware('auth:sanctum')->group(static function() {
 // News
     Route::post('/v1/office/news', [OfficeNieuwsBerichtenController::class, 'create']);
-    Route::get('/v1/office/news/{id}', [OfficeNieuwsBerichtenController::class, 'getById'])->where('id', '[0-9]+');
     Route::post('/v1/office/news/{id}', [OfficeNieuwsBerichtenController::class, 'update'])->where('id', '[0-9]+');
     Route::post('/v1/office/news/{id}/upload', [OfficeNieuwsBerichtenController::class, 'upload'])->where('id', '[0-9]+');
     Route::delete('/v1/office/news/{id}', [OfficeNieuwsBerichtenController::class, 'delete'])->where('id', '[0-9]+');

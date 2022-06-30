@@ -9,8 +9,9 @@
     </div>
     <div class="row mt-lg-5 options">
         <p class="title mb-2">Nieuws</p>
-        <p>Toevoegen</p>
-        <p>Bestaand</p>
+        <router-link to="/dashboard/nieuws-bericht">Toevoegen</router-link>
+        <router-link to="/dashboard/nieuws-bericht-bestaand">Bestaand</router-link>
+
     </div>
     <div class="row mt-lg-5 options">
         <p class="title mb-2">Leden</p>

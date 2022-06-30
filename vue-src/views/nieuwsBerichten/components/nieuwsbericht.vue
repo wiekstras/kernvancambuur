@@ -1,18 +1,23 @@
 <template>
-    <router-link to="/nieuws-berichten/1">
-        <div class="card mb-3">
-            <img
-                src="@/assets/pieterbos.jpeg"
-                class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">
-                    Pieter Bos KVC Speler van het jaar🥳🏆
-                </h5>
-                <p class="card-text">Pieter Bos is door de supporters gekozen tot speler van het seizoen ‘21/‘22.</p>
-                <p class="card-text"><small class="text-muted">12-02-2019</small></p>
-            </div>
+    <div class="row">
+        <div class="col-md-6">
+            <template v-for="nieuws in nieuwsberichtenData">
+                <router-link :to="/nieuws-berichten/">
+                    <div class="card mb-3">
+                        <img
+                            :src="nieuws.news_image_path"
+                            class="card-img-top" alt="nieuws image">
+                        <div class="card-body">
+                    <span v-html="nieuws.news_text_stripped" class="card-title">
+
+                    </span>
+                        </div>
+                    </div>
+                </router-link>
+            </template>
         </div>
-    </router-link>
+    </div>
+
 
 
 
@@ -35,7 +40,12 @@
 
 <script>
 export default {
-    name: "nieuwsbericht"
+    name: "nieuwsbericht",
+    props:{
+        nieuwsberichtenData: {},
+    },
+    created(){
+    }
 }
 </script>
 

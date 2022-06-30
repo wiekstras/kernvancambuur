@@ -1,10 +1,10 @@
 <template>
-test
+
 </template>
 
 <script>
 export default {
-    name: "NieuwBericht"
+    name: "Sfeeractie"
 }
 </script>
 

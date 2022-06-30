@@ -12,11 +12,11 @@ import nieuwsBerichtenDetail from "@/views/nieuwsBerichten/nieuwsBerichtenDetail
 import nieuwsBerichtenCreate from "@/views/nieuwsBerichten/nieuwsBerichtenCreate.vue";
 import Dashboard from "@/views/dashboard/index.vue";
 import ContactPagina from "@/views/contactPagina/ContactPagina.vue";
-import NieuwBericht from "@/views/dashboard/NieuwBericht.vue";
 import Berichten from "@/views/dashboard/Berichten.vue";
 import Donateurs from "@/views/dashboard/Donateurs.vue";
 import Vrijwilligers from "@/views/dashboard/Vrijwilligers.vue";
-
+import NieuwNieuwsBericht from "@/views/dashboard/NieuwNieuwsBericht.vue";
+import BestaandeNieuwsBerichten from "@/views/dashboard/BestaandeNieuwsBerichten.vue";
 
 let routes = [
     {path: '/', component: HomePage, name: 'HomePage'},
@@ -31,17 +31,10 @@ let routes = [
     {path: '/sfeeracties', component: SfeeractiesPage, name: 'SfeeractiesPage'},
     {path: '/sfeeracties', component: SfeeractiesPage, name: 'SfeeractiesPage'},
     {path: '/contact', component: ContactPagina, name: 'Contact'},
-    {path: '/news-create', component: nieuwsBerichtenCreate, name: 'nieuwsBerichtenCreate'},
-
     {
         path: '/dashboard',
         component: Dashboard,
         children: [
-            {
-                path: 'nieuw-bericht',
-                name: 'NieuwBericht',
-                component: NieuwBericht
-            },
             {
                 path: 'berichten',
                 name: 'Berichten',
@@ -57,12 +50,23 @@ let routes = [
                 name: 'Vrijwilligers',
                 component: Vrijwilligers
             },
+            {
+                path: 'nieuws-bericht',
+                name: 'nieuwsbericht',
+                component: NieuwNieuwsBericht
+            },
+            {
+                path: 'nieuws-bericht-bestaand',
+                name: 'nieuwsbericht bestaand',
+                component: BestaandeNieuwsBerichten
+            },
         ],
         meta:{
-            hideNavbar: true
+            hideNavbar: true,
+            requiresAuth: true,
         },
     },
-    
+
 ];
 
 routes.push(
