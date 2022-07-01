@@ -67,7 +67,7 @@
             <a href="/Sfeeracties" class="text-reset">Sfeeracties</a>
           </p>
            <p>
-            <a href="/Nieuws" class="text-reset">Nieuws</a>
+            <a href="/Nieuws-berichten" class="text-reset">Nieuws</a>
           </p>
         </div>
         <!-- Grid column -->

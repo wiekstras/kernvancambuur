@@ -1,24 +1,18 @@
 <template>
-    <div class="row">
+    <template v-for="nieuws in nieuwsberichtenData">
         <div class="col-md-6">
-            <template v-for="nieuws in nieuwsberichtenData">
-                <router-link :to="`/nieuws-berichten/${nieuws.id}`">
-                    <div class="card mb-3">
-                        <img
-                            :src="nieuws.news_image_path"
-                            class="card-img-top" alt="nieuws image">
-                        <div class="card-body">
+        <router-link :to="`/nieuws-berichten/${nieuws.id}`">
+            <div class="card mb-3">
+                <img :src="nieuws.news_image_path" class="card-img-top" alt="nieuws image">
+                <div class="card-body">
                     <span v-html="nieuws.news_text_stripped" class="card-title">
-
                     </span>
-                        </div>
-                    </div>
-                </router-link>
-            </template>
+                </div>
+            </div>
+        </router-link>
         </div>
-    </div>
 
-
+    </template>
 
 
     <!--    <div class="py-1">-->
@@ -41,16 +35,16 @@
 <script>
 export default {
     name: "nieuwsbericht",
-    props:{
+    props: {
         nieuwsberichtenData: {},
     },
-    created(){
+    created() {
     }
 }
 </script>
 
 <style scoped>
-a{
+a {
     text-decoration: none;
 }
 </style>

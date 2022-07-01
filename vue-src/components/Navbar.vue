@@ -68,7 +68,7 @@
               <a class="nav-link" href="/Wedstrijden">Wedstrijden</a>
             </li> -->
           <li class="nav-item">
-            <a class="nav-link" href="/Nieuws">Nieuws</a>
+            <a class="nav-link" href="/Nieuws-berichten">Nieuws</a>
           </li>
         </ul>
 

@@ -3,11 +3,11 @@
         <template v-slot:header>
             <p>Naam verzender: {{ item.name }}</p>
             <p>Email verzender: {{ item.email }}</p>
-           <p>Telefoonnummer verzender: {{ item.phone }}</p> 
+            <p>Telefoonnummer verzender: {{ item.phone }}</p>
         </template>
         <template v-slot:body>
-           <p>Onderwerp: {{ item.subject }}</p> 
-         <p>Bericht: {{ item.message }}</p>   
+            <p>Onderwerp: {{ item.subject }}</p>
+            <p>Bericht: {{ item.message }}</p>
         </template>
     </Modal>
     <table class="table">
@@ -51,6 +51,7 @@ export default {
     methods: {
         deleteMessage(id) {
             this.axios.get('/v1/contact/delete/' + id);
+            this.$router.go();
         },
         async showMessage(id) {
             this.MessageData = (await this.axios.get('/v1/contact/show/' + id)).data;
