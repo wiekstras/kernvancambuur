@@ -11,7 +11,7 @@
                 </section>
                 <footer class="modal-footer">
                     <slot name="footer"></slot>
-                    <button type="button" class="btn-green" @click="close" aria-label="Close modal">sluiten</button>
+                    <button type="button" class="btn-green" @click="close" aria-label="Close modal">Sluiten</button>
                 </footer>
             </div>
         </div>

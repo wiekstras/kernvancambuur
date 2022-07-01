@@ -50,8 +50,10 @@ export default {
     },
     methods: {
         deleteMessage(id) {
-            this.axios.get('/v1/contact/delete/' + id);
-            this.$router.go();
+            if (confirm("Weet je zeker dat je het wilt verwijderen?")) {
+                this.axios.get('/v1/contact/delete/' + id);
+                this.$router.go();
+            }
         },
         async showMessage(id) {
             this.MessageData = (await this.axios.get('/v1/contact/show/' + id)).data;

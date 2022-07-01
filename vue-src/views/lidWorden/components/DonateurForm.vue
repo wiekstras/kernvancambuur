@@ -2,7 +2,7 @@
     <Modal v-show="isModalVisible" @close="closeModal">
         <template v-slot:header>
             <p v-if="this.requestResponse === true">Uw aanmelding wordt verwerkt.</p>
-            <p v-else>Fout</p>
+            <p style="color:red" v-else>Fout</p>
         </template>
         <template v-slot:body>
             <p v-if="this.requestResponse === true">

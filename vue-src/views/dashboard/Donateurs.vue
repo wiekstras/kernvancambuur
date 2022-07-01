@@ -50,8 +50,10 @@ export default {
   },
   methods: {
     deleteMember(id) {
-      this.axios.get('/v1/member/delete/' + id);
-      this.$router.go();
+      if (confirm("Weet je zeker dat je het wilt verwijderen?")) {
+        this.axios.get('/v1/member/delete/' + id);
+        this.$router.go();
+      }
     },
     async showMore(id) {
       this.UserData = (await this.axios.get('/v1/member/show/' + id)).data;

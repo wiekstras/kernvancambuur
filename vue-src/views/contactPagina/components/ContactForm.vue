@@ -1,16 +1,15 @@
 <template>
     <Modal v-show="isModalVisible" @close="closeModal">
         <template v-slot:header>
-            <p v-if="this.requestResponse === true">Uw aanmelding wordt verwerkt.</p>
-            <p v-else>Fout</p>
+            <p v-if="this.requestResponse === true">Uw bericht is verzonden</p>
+            <p v-else style="color:red">Fout</p>
         </template>
         <template v-slot:body>
             <p v-if="this.requestResponse === true">
                 <b>Wat nu?</b><br>
-                Uw aanmelding wordt verwerkt door de administatie, u krijgt later een mail met meer informatie
-                over uw aanmelding
+                Uw bericht is binnen gekomen bij de ons. Wij zullen zo snel mogelijk reageren op het bericht.
             </p>
-            <p v-else>Er ging iets mis tijdens het aanmelden, probeer het later opnieuw</p>
+            <p v-else>Er ging iets mis tijdens het versturen, heeft u alles goed ingevuld?</p>
         </template>
     </Modal>
     <form @submit.prevent="submit" style="width: 50%; justify-content: center; margin: auto;">
@@ -141,6 +140,9 @@ export default defineComponent({
 .control {
         margin-bottom: 15px;
 
+}
+.modal p{
+    color:black
 }
 
 </style>
