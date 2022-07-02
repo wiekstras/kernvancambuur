@@ -10,6 +10,7 @@
         :accepted-file-types="fileTypes"
         :allow-multiple="multiple"
         :allow-reorder="multiple"
+        :files="initialFiles"
         :label-idle="label"
         :required="required"
     />

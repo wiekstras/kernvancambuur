@@ -56,6 +56,11 @@ let routes = [
                 component: NieuwNieuwsBericht
             },
             {
+                path: 'nieuws-bericht/:id',
+                name: 'edit nieuws bericht',
+                component: NieuwNieuwsBericht
+            },
+            {
                 path: 'nieuws-bericht-bestaand',
                 name: 'nieuwsbericht bestaand',
                 component: BestaandeNieuwsBerichten

@@ -24,7 +24,7 @@
                 ref="imageUpload"
                 label="Upload hier de afbeelding voor het nieuwsbericht."
                 :multiple="false"
-                :initialFiles="blogFormData.news_image_path"
+                :initialFiles="initialImageFiles"
                 required
             />
             <ErrorField :error="errorException"/>
@@ -67,13 +67,14 @@ export default {
         if (newsId) {
             // Get blog data
             this.blogFormData = (await this.axios.get('/v1/office/news/' + newsId)).data;
-
+            this.updateInitialFiles();
         }
     },
     data() {
         return {
             blogFormData: {},
             errorException: null,
+            initialImageFiles: [],
         }
     },
     methods: {
@@ -84,15 +85,22 @@ export default {
             }
             try {
                 this.blogFormData = (await this.axios.post(url, this.blogFormData)).data;
-                console.log("test1");
                 await this.$refs.imageUpload.submit(`/v1/office/news/${this.blogFormData.id}/upload`, null, null, null);
-                console.log("test2");
                 this.$router.push('/dashboard');
             } catch (e) {
                 this.errorException = e;
                 return;
             }
 
+        },
+        updateInitialFiles() {
+            console.log(this.blogFormData)
+            this.initialImageFiles = this.blogFormData.images.map(file => {
+                return {
+                    serverId: file.id,
+                    source: file.news_image_path,
+                };
+            });
         },
     }
 }
