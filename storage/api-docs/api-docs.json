@@ -617,6 +617,11 @@
                         "type": "integer",
                         "readOnly": true
                     },
+                    "news_title": {
+                        "title": "News title",
+                        "description": "News title",
+                        "type": "string"
+                    },
                     "news_image_path": {
                         "title": "Image path",
                         "description": "Path to the image on the server",
@@ -646,6 +651,11 @@
                         "description": "Path to the image on the server",
                         "type": "string",
                         "readOnly": true
+                    },
+                    "news_title": {
+                        "title": "News title",
+                        "description": "News title",
+                        "type": "string"
                     },
                     "news_text_stripped": {
                         "title": "News text",

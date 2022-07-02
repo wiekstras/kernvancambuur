@@ -4,13 +4,13 @@
         <thead v-if="FormData.length > 0">
         <tr>
             <th scope="col">id</th>
-            <th scope="col">tekst</th>
+            <th scope="col">Titel</th>
         </tr>
         </thead>
         <tbody v-for="item in FormData">
         <tr>
             <td>{{ item.id }}</td>
-            <td><span v-html="item.news_text_stripped"></span></td>
+            <td><span v-html="item.news_title"></span></td>
             <td><button v-on:click="deleteNieuws(item.id)">Verwijder</button></td>
         </tr>
         </tbody>

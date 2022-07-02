@@ -8,7 +8,12 @@
                 :model="blogFormData"
                 :fields="[
                    {
-                        label: 'Blog',
+                        label: 'Nieuws titel',
+                        attribute: 'news_title',
+                        rules:'required'
+                    },
+                    {
+                        label: 'Nieuws text',
                         attribute: 'news_text',
                         type: 'html',
                         rules:'required'

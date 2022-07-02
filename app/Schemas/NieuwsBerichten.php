@@ -26,6 +26,12 @@ class NieuwsBerichten extends BaseResource
      *     readOnly=true
      * )
      * @OA\Property(
+     *     property="news_title",
+     *     type="string",
+     *     description="News title",
+     *     title="News title",
+     * )
+     * @OA\Property(
      *     property="news_image_path",
      *     type="string",
      *     description="Path to the image on the server",
@@ -46,6 +52,7 @@ class NieuwsBerichten extends BaseResource
     {
         return [
             'id'              => $this->id,
+            'news_title'      => $this->news_title,
             'news_image_path' => ! empty($this->news_image_path) ? Storage::disk('public')->url($this->news_image_path) : '',
             'news_text'       => $this->news_text,
         ];
