@@ -10,10 +10,10 @@
                     </div>
                     <div class="col">
                         <div class="row">
-                           <span v-html="nieuws.news_text_stripped "></span>
+                           <span v-html="nieuws.news_title "></span>
                         </div>
                         <div class="row">
-                            <span v-html="nieuws.id"></span>
+                            <span v-html="nieuws.publish_date"></span>
                         </div>
                     </div>
                 </div>

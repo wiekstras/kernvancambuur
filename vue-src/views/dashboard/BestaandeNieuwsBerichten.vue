@@ -12,6 +12,7 @@
             <td>{{ item.id }}</td>
             <td><span v-html="item.news_title"></span></td>
             <td><button v-on:click="deleteNieuws(item.id)">Verwijder</button></td>
+            <td><button v-on:click="editNieuws(item.id)">Bewerken</button></td>
         </tr>
         </tbody>
     </table>
@@ -34,6 +35,9 @@ export default {
             this.$router.go();
 
         },
+        editNieuws(id){
+             this.$router.push(`/dashboard/nieuws-bericht/${id}`)
+        }
     },
     components: {
     },
