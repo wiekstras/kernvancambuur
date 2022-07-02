@@ -97,8 +97,6 @@ class OfficeNieuwsBerichtenController extends BaseController
 
         // Validate data
         $data = $request->validate(NieuwsBerichtenResource::rules());
-        Log::info('Check if news_title is set: '.$request->news_title);
-
         // Create News obj
         $model = NieuwsBerichten::create(array_merge($data, [
             'news_image_path' => '',
@@ -108,8 +106,6 @@ class OfficeNieuwsBerichtenController extends BaseController
         // Return created News object
         // TODO return 201?
         $model->refresh();
-        Log::info('Check if news_title is set: '.$model);
-
         return new NieuwsBerichtenResource($model);
     }
 
