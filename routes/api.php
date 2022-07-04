@@ -7,6 +7,7 @@ use App\Http\Controllers\NieuwsBerichtenController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\VolunteerController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SfeeractieController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -58,6 +59,15 @@ Route::post('/v1/contact', [ContactController::class, 'store']);
 Route::get('/v1/contact/get', [ContactController::class, 'latest']);
 Route::get('/v1/contact/delete/{id}',[ContactController::class, 'destroy']);
 Route::get('/v1/contact/show/{id}', [ContactController::class, 'show']);
+
+// Sfeeractie (currently without authentication check)
+Route::controller(SfeeractieController::class)->group(function() {
+    Route::prefix('/v1/dashboard')->group(function() {
+        Route::get('/sfeeracties', 'index');
+        Route::post('/nieuw-bericht', 'store');
+    });
+});
+
 
 // Fallback
 Route::any('/v1/{any}', function() { abort(404, 'page not found'); })->where('any', '.*');
