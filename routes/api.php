@@ -7,6 +7,7 @@ use App\Http\Controllers\NieuwsBerichtenController;
 use App\Http\Controllers\MemberController;
 use App\Http\Controllers\VolunteerController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\SfeeractieController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -49,6 +50,15 @@ Route::post('/v1/lid-worden/donateur-worden', [MemberController::class, 'store']
 
 //Contact
 Route::post('/v1/contact', [ContactController::class, 'store']);
+
+// Sfeeractie (currently without authentication check)
+Route::controller(SfeeractieController::class)->group(function() {
+    Route::prefix('/v1/dashboard')->group(function() {
+        Route::get('/sfeeracties', 'index');
+        Route::post('/nieuw-bericht', 'store');
+    });
+});
+
 
 // Fallback
 Route::any('/v1/{any}', function() { abort(404, 'page not found'); })->where('any', '.*');

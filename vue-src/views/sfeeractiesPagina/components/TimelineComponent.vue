@@ -3,12 +3,12 @@
     <!-- Desktop View -->
 
     <div class="d-none d-lg-block">
-        <DesktopTimelineComponent/>
+        <DesktopTimelineComponent :posts="posts"/>
     </div>
 
     <!-- Mobile View -->
     <div class="d-lg-none">
-        <MobileTimelineComponent/>
+        <MobileTimelineComponent :posts="posts"/>
     </div>
 </template>
 
@@ -18,7 +18,20 @@ import DesktopTimelineComponent from "./DesktopTimelineComponent.vue";
 
 export default {
     name: "TimelineComponent",
-    components: {DesktopTimelineComponent, MobileTimelineComponent}
+    data() {
+        return {
+            posts: {},
+        }
+    },
+    async created() {
+        this.posts = (await this.axios.get('/v1/dashboard/sfeeracties')).data.message
+        console.log(this.posts);
+    },
+    components: 
+    {
+        DesktopTimelineComponent, 
+        MobileTimelineComponent
+    }
 }
 </script>
 
