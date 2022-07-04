@@ -5,8 +5,8 @@
             <div class="card mb-3">
                 <img :src="nieuws.news_image_path" class="card-img-top" alt="nieuws image">
                 <div class="card-body">
-                    <span v-html="nieuws.news_text_stripped" class="card-title">
-                    </span>
+                    <span v-html="nieuws.news_title" class="card-title"></span>
+                    <span v-html="nieuws.news_text_stripped"></span>
                 </div>
             </div>
         </router-link>

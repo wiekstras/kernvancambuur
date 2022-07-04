@@ -13,7 +13,6 @@ return new class extends Migration
      */
     public function up()
     {
-        // Create LotteryPrizes table
         Schema::create('news', function (Blueprint $table){
             $table->id();
             $table->string('news_image_path');
