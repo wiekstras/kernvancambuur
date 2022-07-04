@@ -2,7 +2,7 @@
     <Modal v-show="isModalVisible" @close="closeModal">
         <template v-slot:header>
             <p v-if="this.requestResponse === true">Uw aanmelding wordt verwerkt.</p>
-            <p v-else>Fout</p>
+            <p style="color:red" v-else>Fout</p>
         </template>
         <template v-slot:body>
             <p v-if="this.requestResponse === true">
@@ -15,7 +15,7 @@
     </Modal>
 
     <form @submit.prevent="submit" style="width: 50%; justify-content: center; margin: auto;">
-        <h2>Word Donateur</h2>
+        <h2>Word lid</h2>
         <div class="row">
             <div class="col-12 col-md-6">
                 <label class="label">Naam</label>

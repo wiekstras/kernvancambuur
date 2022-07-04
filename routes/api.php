@@ -31,12 +31,12 @@ Route::middleware('auth:sanctum')->post('/v1/auth/update-password', [AuthControl
 
 Route::get('/v1/news/latest', [NieuwsBerichtenController::class, 'latest']);
 Route::get('/v1/office/news', [OfficeNieuwsBerichtenController::class, 'index']);
+Route::get('/v1/office/news/{id}', [OfficeNieuwsBerichtenController::class, 'getById'])->where('id', '[0-9]+');
 
 
 Route::middleware('auth:sanctum')->group(static function() {
 // News
     Route::post('/v1/office/news', [OfficeNieuwsBerichtenController::class, 'create']);
-    Route::get('/v1/office/news/{id}', [OfficeNieuwsBerichtenController::class, 'getById'])->where('id', '[0-9]+');
     Route::post('/v1/office/news/{id}', [OfficeNieuwsBerichtenController::class, 'update'])->where('id', '[0-9]+');
     Route::post('/v1/office/news/{id}/upload', [OfficeNieuwsBerichtenController::class, 'upload'])->where('id', '[0-9]+');
     Route::delete('/v1/office/news/{id}', [OfficeNieuwsBerichtenController::class, 'delete'])->where('id', '[0-9]+');
@@ -44,12 +44,21 @@ Route::middleware('auth:sanctum')->group(static function() {
 
 // Volunteer
 Route::post('/v1/lid-worden/vrijwilliger-worden', [VolunteerController::class, 'store']);
+Route::get('/v1/volunteer/get', [VolunteerController::class, 'index']);
+Route::get('/v1/volunteer/delete/{id}', [VolunteerController::class, 'destroy']);
+Route::get('/v1/volunteer/show/{id}', [VolunteerController::class, 'show']);
 
 // Member
 Route::post('/v1/lid-worden/donateur-worden', [MemberController::class, 'store']);
+Route::get('/v1/member/get', [MemberController::class, 'index']);
+Route::get('/v1/member/delete/{id}', [MemberController::class, 'destroy']);
+Route::get('/v1/member/show/{id}', [MemberController::class, 'show']);
 
 //Contact
 Route::post('/v1/contact', [ContactController::class, 'store']);
+Route::get('/v1/contact/get', [ContactController::class, 'latest']);
+Route::get('/v1/contact/delete/{id}',[ContactController::class, 'destroy']);
+Route::get('/v1/contact/show/{id}', [ContactController::class, 'show']);
 
 // Sfeeractie (currently without authentication check)
 Route::controller(SfeeractieController::class)->group(function() {

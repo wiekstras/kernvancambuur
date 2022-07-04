@@ -5,7 +5,7 @@ namespace App\Models;
 use Carbon\Carbon as DateTime;
 use Carbon\Traits\Date;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Support\Facades\DB;
 
 /**
@@ -27,27 +27,10 @@ class Volunteer extends AbstractModel
     use HasFactory;
     protected $fillable = ['name', 'surname', 'date_of_birth', 'gender', 'email'];
 
-    /**
-     * Relationship for volunteer on address.
-     *
-     * @return BelongsTo
-     */
-    public function address(): BelongsTo
+    public function address(): HasOne
     {
-        return $this->belongsTo(Address::class);
+        return $this->hasOne(Address::class);
     }
-
-    /**
-     * Get The address of a volunteer by id.
-     *
-     * @param $volunteerId
-     * @return Address|mixed
-     */
-    public function getAddress($volunteerId)
-    {
-        return (new Address)->find($volunteerId);
-    }
-
     /**
      * Inserts a volunteer and returns the primary key.
      * @param $values

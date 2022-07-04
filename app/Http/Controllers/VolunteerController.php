@@ -8,6 +8,7 @@ use Carbon\Carbon;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 class VolunteerController extends BaseController
 {
@@ -18,7 +19,7 @@ class VolunteerController extends BaseController
      */
     public function index()
     {
-        //
+        return Volunteer::with('address')->get();
     }
 
     /**
@@ -93,7 +94,7 @@ class VolunteerController extends BaseController
      */
     public function show($id)
     {
-        //
+        return Volunteer::with('address',)->where('id',[$id])->get();
     }
 
     /**
@@ -127,6 +128,6 @@ class VolunteerController extends BaseController
      */
     public function destroy($id)
     {
-        //
+        DB::delete('delete from volunteers where id = ?',[$id]);
     }
 }

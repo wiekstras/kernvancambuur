@@ -16,6 +16,7 @@
 
 <script>
 import HTMLInput from "./HTMLInput.vue";
+import TextInput from "./TextInput.vue";
 
 export default {
     name: "InputWrapper",
@@ -55,7 +56,7 @@ export default {
                     // TODO get dynamic importing working, saves quite some bundle size!
                     // return () => import('./HTMLInput.vue');
                 default:
-                    return HTMLInput;
+                    return TextInput;
             }
         }
     },

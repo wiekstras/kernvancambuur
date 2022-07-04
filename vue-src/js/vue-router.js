@@ -12,7 +12,11 @@ import nieuwsBerichtenDetail from "@/views/nieuwsBerichten/nieuwsBerichtenDetail
 import nieuwsBerichtenCreate from "@/views/nieuwsBerichten/nieuwsBerichtenCreate.vue";
 import Dashboard from "@/views/dashboard/index.vue";
 import ContactPagina from "@/views/contactPagina/ContactPagina.vue";
-
+import Berichten from "@/views/dashboard/Berichten.vue";
+import Donateurs from "@/views/dashboard/Donateurs.vue";
+import Vrijwilligers from "@/views/dashboard/Vrijwilligers.vue";
+import NieuwNieuwsBericht from "@/views/dashboard/NieuwNieuwsBericht.vue";
+import BestaandeNieuwsBerichten from "@/views/dashboard/BestaandeNieuwsBerichten.vue";
 
 let routes = [
     {path: '/', component: HomePage, name: 'HomePage'},
@@ -25,24 +29,49 @@ let routes = [
     {path: '/lid-worden/donateur-worden', component: DonateurPage, name: 'DonateurPage'},
     {path: '/login', component: LogInPage, name: 'LogIn'},
     {path: '/sfeeracties', component: SfeeractiesPage, name: 'SfeeractiesPage'},
+    {path: '/sfeeracties', component: SfeeractiesPage, name: 'SfeeractiesPage'},
+    {path: '/contact', component: ContactPagina, name: 'Contact'},
     {
         path: '/dashboard',
         component: Dashboard,
         children: [
             {
-                path: 'nieuw-bericht',
-                name: 'NieuwBericht',
-                component: NieuwBericht
+                path: 'berichten',
+                name: 'Berichten',
+                component: Berichten
+            },
+            {
+                path: 'donateurs',
+                name: 'Donateurs',
+                component: Donateurs
+            },
+            {
+                path: 'vrijwilligers',
+                name: 'Vrijwilligers',
+                component: Vrijwilligers
+            },
+            {
+                path: 'nieuws-bericht',
+                name: 'nieuwsbericht',
+                component: NieuwNieuwsBericht
+            },
+            {
+                path: 'nieuws-bericht/:id',
+                name: 'edit nieuws bericht',
+                component: NieuwNieuwsBericht
+            },
+            {
+                path: 'nieuws-bericht-bestaand',
+                name: 'nieuwsbericht bestaand',
+                component: BestaandeNieuwsBerichten
             },
         ],
         meta:{
-            hideNavbar: true
+            hideNavbar: true,
+            requiresAuth: true,
         },
     },
 
-    {path: '/sfeeracties', component: SfeeractiesPage, name: 'SfeeractiesPage'},
-    {path: '/contact', component: ContactPagina, name: 'Contact'},
-    {path: '/news-create', component: nieuwsBerichtenCreate, name: 'nieuwsBerichtenCreate'},
 ];
 
 routes.push(
@@ -58,7 +87,7 @@ const router = createRouter({
 // Add authentication/authorization checks
 
 import {useAuthStore} from '@/store/auth';
-import NieuwBericht from "@/views/dashboard/NieuwBericht.vue";
+
 
 router.beforeEach(async (to, from) => {
     // Setup auth store and wait before navigation

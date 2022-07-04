@@ -39,6 +39,11 @@ class Address extends AbstractModel
         return $this->belongsToMany(Volunteer::class);
     }
 
+    public function members(): BelongsToMany
+    {
+        return $this->belongsToMany(Volunteer::class);
+    }
+
     /**
      * Inserts the address that uses the foreign key of the before added volunteer.
      *

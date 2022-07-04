@@ -1,6 +1,7 @@
 <template>
 <div class="container bg-white rounded-1">
-    <img src="@/assets/pieterbos.jpeg" alt="">
+    <h1>Kern van Cambuur nieuws</h1>
+    <img :src="FormData.news_image_path" class="img-fluid" alt="nieuws image">
     <span class="ck-content " v-html="FormData.news_text"></span>
 </div>
 </template>
@@ -15,7 +16,9 @@ export default {
         }
     },
     async created() {
-        this.FormData = (await this.axios.get('/v1/news/latest')).data;
+        const routeId = this.$route.params.id;
+        this.FormData = (await this.axios.get(`/v1/office/news/${routeId}`)).data;
+        console.log(this.FormData)
     }
 }
 </script>

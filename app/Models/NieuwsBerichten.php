@@ -5,13 +5,14 @@ namespace App\Models;
 use Carbon\Carbon as DateTime;
 
 /**
- * Class PromolotBlog
- * This is the model class for the table "promolot_blog"
+ * Class
+ * This is the model class for the table "news"
  *
  * @property integer $id
  * @property string  $news_image_path
  * @property string  $news_text
  * @property string  $news_text_stripped
+ * @property string  $news_title
  *
  * @property DateTime $created_at
  * @property DateTime $updated_at
@@ -29,5 +30,5 @@ class NieuwsBerichten extends AbstractModel
     }
 
     protected $table = 'news';
-
+    protected $fillable = ['news_text', 'news_title', 'news_image_path'];
 }

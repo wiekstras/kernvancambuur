@@ -32,6 +32,12 @@ class NieuwsBerichtenCondensed extends BaseResource
      *     title="Image path",
      *     readOnly=true
      * )
+     * * @OA\Property(
+     *     property="news_title",
+     *     type="string",
+     *     description="News title",
+     *     title="News title",
+     * )
      * @OA\Property(
      *     property="news_text_stripped",
      *     type="string",
@@ -46,8 +52,10 @@ class NieuwsBerichtenCondensed extends BaseResource
     {
         return [
             'id'                 => $this->id,
+            'news_title'         => $this->news_title,
             'news_image_path'    => ! empty($this->news_image_path) ? Storage::disk('public')->url($this->news_image_path) : '',
-            'news_text_stripped' => $this->news_text_stripped,
+            'news_text_stripped' => $this->news_text,
+            'publish_date'       => $this->created_at,
         ];
     }
 }

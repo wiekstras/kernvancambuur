@@ -27,7 +27,6 @@ export default {
         FilePond,
     },
     props: {
-        initialFiles: Array,
         label: String,
 
         editImage: {
@@ -73,34 +72,27 @@ export default {
                     const uploadedFile = (await this.axios.post(urlUpload, formData)).data;
 
                     fileServerIds.push(uploadedFile.id);
-                } else {
-                    // The image already exists on the server, but we can't pass the serverId directly anymore so get it
-                    const initialPondFile = this.initialFiles.find((element => {
-                        return element.source === file.source
-                    }));
-
-                    fileServerIds.push(initialPondFile.serverId);
                 }
             }
 
             // Call delete/sort endpoints when we got something to delete&sort
-            if (this.multiple) {
-                // Get IDs of the initial images and get the difference, so we know which to delete
-                const initialFileServerIds = this.initialFiles.map(e => e.serverId),
-                    deletedFileServerIds = initialFileServerIds.filter(item => !fileServerIds.includes(item));
-
-                // Delete images
-                for (const imageId of deletedFileServerIds) {
-                    await this.axios.delete(`${urlDelete}/${imageId}`)
-                }
-
-                // Re-sort images
-                if(fileServerIds.length > 0) {
-                    let formData = {}
-                    formData[sortAttribute] = fileServerIds
-                    await this.axios.post(urlSort, formData)
-                }
-            }
+            // if (this.multiple) {
+            //     // Get IDs of the initial images and get the difference, so we know which to delete
+            //     const initialFileServerIds = this.initialFiles.map(e => e.serverId),
+            //         deletedFileServerIds = initialFileServerIds.filter(item => !fileServerIds.includes(item));
+            //
+            //     // Delete images
+            //     for (const imageId of deletedFileServerIds) {
+            //         await this.axios.delete(`${urlDelete}/${imageId}`)
+            //     }
+            //
+            //     // Re-sort images
+            //     if(fileServerIds.length > 0) {
+            //         let formData = {}
+            //         formData[sortAttribute] = fileServerIds
+            //         await this.axios.post(urlSort, formData)
+            //     }
+            // }
         }
     },
 }

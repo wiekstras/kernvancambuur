@@ -8,6 +8,7 @@ Use App\Http\Controllers\BaseController;
 use App\Schemas\NieuwsBerichten AS NieuwsBerichtenResource;
 use App\Schemas\NieuwsBerichtenCondensed AS NieuwsBerichtenCondensedResource;
 Use App\Models\NieuwsBerichten;
+use Illuminate\Support\Facades\Log;
 
 /**
  * OfficeNieController
@@ -96,10 +97,10 @@ class OfficeNieuwsBerichtenController extends BaseController
 
         // Validate data
         $data = $request->validate(NieuwsBerichtenResource::rules());
-
-        // Create News Blog obj
+        // Create News obj
         $model = NieuwsBerichten::create(array_merge($data, [
             'news_image_path' => '',
+            'news_title' => $request->news_title,
         ]));
 
         // Return created News object

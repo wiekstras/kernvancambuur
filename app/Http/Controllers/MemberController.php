@@ -7,6 +7,7 @@ use App\Models\BillingInfo;
 use App\Models\Member;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MemberController extends BaseController
 {
@@ -17,7 +18,7 @@ class MemberController extends BaseController
      */
     public function index()
     {
-        //
+       return Member::with('address')->get();
     }
 
     /**
@@ -108,7 +109,7 @@ class MemberController extends BaseController
      */
     public function show($id)
     {
-        //
+        return Member::with('address','billingInfo')->where('id',[$id])->get();
     }
 
     /**
@@ -142,6 +143,6 @@ class MemberController extends BaseController
      */
     public function destroy($id)
     {
-        //
+        DB::delete('delete from members where id = ?',[$id]);
     }
 }
