@@ -17,6 +17,7 @@ import Donateurs from "@/views/dashboard/Donateurs.vue";
 import Vrijwilligers from "@/views/dashboard/Vrijwilligers.vue";
 import NieuwNieuwsBericht from "@/views/dashboard/NieuwNieuwsBericht.vue";
 import BestaandeNieuwsBerichten from "@/views/dashboard/BestaandeNieuwsBerichten.vue";
+import NieuwBericht from '@/views/dashboard/Sfeeractie.vue'
 
 let routes = [
     {path: '/', component: HomePage, name: 'HomePage'},
@@ -35,6 +36,11 @@ let routes = [
         path: '/dashboard',
         component: Dashboard,
         children: [
+            {
+                path: 'nieuw-bericht',
+                name: 'NieuwBericht',
+                component: NieuwBericht
+            },
             {
                 path: 'berichten',
                 name: 'Berichten',
