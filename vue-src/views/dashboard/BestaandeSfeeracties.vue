@@ -42,8 +42,12 @@ export default {
         console.log(this.eventData);
 	},
 	methods: {
-		edit(id){
-             this.$router.push(`/dashboard/nieuw-bericht/${id}`)
+		edit(id) {
+             this.$router.push(`/dashboard/nieuw-bericht/${id}`);
+        },
+        async destroy(id) {
+        	await this.axios.delete(`/v1/dashboard/nieuw-bericht/${id}`);
+        	this.$router.go(0);
         }
 	}
 

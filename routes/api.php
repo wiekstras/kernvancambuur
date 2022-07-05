@@ -69,6 +69,7 @@ Route::controller(SfeeractieController::class)->group(function() {
         Route::get('/sfeeracties/{id}', 'show');
         Route::post('/nieuw-bericht', 'store');
         Route::post('/nieuw-bericht/{id}', 'update');
+        Route::delete('/nieuw-bericht/{id}', 'destroy');
         Route::post('/{id}/upload', 'upload');
     });
 });
