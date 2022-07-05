@@ -17,16 +17,12 @@
         <p class="title mb-2">Leden</p>
         <router-link to="/dashboard/donateurs">Donateurs</router-link>
         <router-link to="/dashboard/vrijwilligers">Vrijwilligers</router-link>
-        <p>nieuwe aanmeldingen</p>
+        <router-link to="/dashboard/nieuwe-aanmeldingen">Nieuwe aanmeldingen</router-link>
+
     </div>
     <div class="row mt-lg-5 options">
         <p class="title mb-2">Contact</p>
         <router-link to="/dashboard/berichten">Berichten</router-link>
-    </div>
-    <div class="row mt-lg-5 options">
-        <p class="title mb-2">Account</p>
-        <p>mijn account</p>
-        <p>gebruikers</p>
     </div>
 </template>
 

@@ -34,6 +34,7 @@ export default{
             try {
                 const response = (await this.axios.post('/v1/auth/login',this.FormDataUser)).data
                 await this.authStore.setToken(response.access_token)
+                this.$router.push('/dashboard');
             } catch {
 
             }

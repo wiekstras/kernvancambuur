@@ -15,6 +15,8 @@
       <p>Geslacht: {{ item.gender }}</p>
     </template>
   </Modal>
+    <div class="container-fluid">
+        <h1>Bestaande donateurs</h1>
   <table class="table">
     <p v-if="FormData.length < 1"> Er zijn geen donateurs </p>
     <thead v-if="FormData.length > 0">
@@ -29,11 +31,12 @@
         <td>{{ item.name }}</td>
         <td>{{ item.surname }}</td>
         <td>{{ item.email }}</td>
-        <td><button v-on:click="showMore(item.id)">Meer info</button></td>
-        <td><button v-on:click="deleteMember(item.id)">Verwijder</button></td>
+        <td><button v-on:click="showMore(item.id)" class="btn btn-warning rounded-2" type="button">Meer info</button></td>
+        <td><button v-on:click="deleteMember(item.id)" class="btn btn-danger rounded-2" type="button">Verwijder</button></td>
       </tr>
     </tbody>
   </table>
+    </div>
 </template>
 
 <script>
@@ -77,7 +80,5 @@ export default {
 </script>
 
 <style scoped>
-.table {
-  color: white
-}
+
 </style>

@@ -1,13 +1,15 @@
 <template>
     <div class="container-fluid">
-        <div class="row">
-            <!-- Sidebar location -->
-            <div class="col-lg-2 sidebar-location">
-                <Sidebar/>
-            </div>
-            <!-- Content -->
-            <div class="col-lg-10">
-                <router-view></router-view>
+        <div class="background-white">
+            <div class="row">
+                <!-- Sidebar location -->
+                <div class="col-lg-2 sidebar-location">
+                    <Sidebar/>
+                </div>
+                <!-- Content -->
+                <div class="col-lg-10">
+                    <router-view></router-view>
+                </div>
             </div>
         </div>
     </div>
@@ -23,11 +25,14 @@ export default {
 
 <style scoped>
 .row {
-    
+
 }
 .sidebar-location {
     background: #1a202c;
     overflow-x: scroll;
     height: 100vh;
+}
+.background-white{
+    background-color: #ffffff!important;
 }
 </style>
