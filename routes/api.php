@@ -66,7 +66,10 @@ Route::get('/v1/contact/show/{id}', [ContactController::class, 'show']);
 Route::controller(SfeeractieController::class)->group(function() {
     Route::prefix('/v1/dashboard')->group(function() {
         Route::get('/sfeeracties', 'index');
+        Route::get('/sfeeracties/{id}', 'show');
         Route::post('/nieuw-bericht', 'store');
+        Route::post('/nieuw-bericht/{id}', 'update');
+        Route::post('/{id}/upload', 'upload');
     });
 });
 

@@ -19,42 +19,32 @@
     </div>
     <div class="row justify-content-between">
         <form @submit.prevent="submit">
-            <div class="row mb-2">
-                <div class="col-2">
-                    <label for="postTitle" class="form-label">Titel</label>
-                </div>
-                <div class="col-10">
-                    <span v-for="(errorItem, index) in errors.title">{{errorItem}}</span>
-                    <input v-model="form.title" type="text" class="form-control"/>
-                </div>
-            </div>
-            <div class="row mb-2">
-                <div class="col-2">
-                    <label for="postFile" class="form-label">foto/filmpje</label>
-                </div>
-                <div class="col-10">
-                    <span v-for="(errorItem, index) in errors.file">{{errorItem}}</span>
-                    <input 
-                        v-on:change="handleFileChange($event)"
-                        type="file"
-                        class="custom-file-input"
-                        ref="fileupload">
-                </div>
-            </div>
-            <div class="row mb-2">
-                <div class="col-2">
-                    <label for="postDescription" class="form-label">Beschrijving</label>
-                </div>
-                <div class="col-10">
-                    <span v-for="(errorItem, index) in errors.description">
-                        {{errorItem}}
-                    </span>
-                    <textarea v-model="form.description" class="form-control" rows="5"/>
-                </div>
-            </div>
+            <FieldBuilder
+                :model="eventFormData"
+                :fields="[
+                    {
+                        label: 'Titel',
+                        attribute: 'title',
+                        rules:'required'
+                    },
+                    {
+                        label: 'Beschrijving',
+                        attribute: 'description',
+                        type: 'html',
+                        rules:'required'
+                    }]"
+            />
+            <FileUpload
+                name="pond"
+                ref="imageUpload"
+                label="Upload hier de afbeelding voor het nieuwsbericht."
+                :multiple="false"
+                :initialFiles="initialImageFiles"
+                required
+            />
             <div class="col-12">
                 <button type="submit" class="d-flex btn btn-primary ms-auto">
-                    Opslaan
+                    Plaats Sfeeractie
                 </button>
             </div>
         </form>
@@ -63,41 +53,44 @@
 </template>
 
 <script>
+import FieldBuilder from "@/components/FieldBuilder.vue";
+import FileUpload from "@/components/FileUpload.vue";
 import Modal from "../lidWorden/components/Modal.vue";
 export default {
     name: "NieuwBericht",
     data() {
         return {
-            form: { 
-                'title': '',
-                'file':  '',
-                'description': ''
-            },
+            eventFormData: {},
             requestResponse: false,
             isModalVisible: false,
             errors: { },
         };
     },
-    components: { Modal },
-    methods: {
-        submit() {
-            /* Need to create new formdata object or the image can't be uploaded. */
-            let formData = new FormData();
-            formData.append('title', this.form.title);
-            formData.append('file', this.form.file);
-            formData.append('description', this.form.description);
+    components: { Modal, FieldBuilder, FileUpload },
+    async created() {
+        const eventId = this.$route.params.id;
 
-            this.axios.post('/v1/dashboard/nieuw-bericht', formData).then(response=>{
-                if (response.data.message === true) {
-                    this.requestResponse = true;
-                    this.showModal();
-                    this.form = {'title': '', 'file': '', 'description': ''}
-                    this.$refs.fileupload.value=null;
+        if (eventId) {
+            this.eventFormData = (await this.axios.get('/v1/dashboard/sfeeracties/' + eventId)).data;
+            console.log(this.eventFormData);
+        }
+    },
+    methods: {
+        async submit() {
+            try {
+                let url = '/v1/dashboard/nieuw-bericht';
+                if (this.eventFormData.id) {
+                    url += '/' + this.eventFormData.id;
                 }
-            }).catch(error=>{
+                console.log(url);
+                this.eventFormData = (await this.axios.post(url, this.eventFormData)).data;
+                this.$refs.imageUpload.submit(`/v1/dashboard/${this.eventFormData.id}/upload`, null, null, null);
+                this.isModalVisible = true;
                 this.requestResponse = true;
-                this.errors = error.response.data.message.fields;
-            });
+            } catch(error) {
+                this.isModalVisible = true;
+                this.requestResponse = false;
+            }
         },
         handleFileChange(event) {
             this.form.file = event.target.files[0];
@@ -107,6 +100,7 @@ export default {
         },
         closeModal() {
             this.isModalVisible = false;
+            this.$router.push('/dashboard')
         }
     }
 }

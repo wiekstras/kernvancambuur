@@ -8,7 +8,7 @@
                 <div class="col-lg-6">
                     <p class="fw-bold">{{post.created_at}}</p>
                     <h5>{{post.title}}</h5>
-                    <p>{{post.description}}</p>
+                    <span v-html="post.description"></span>
                 </div>
             </div>
         </div>
@@ -17,7 +17,7 @@
                 <div class="col-lg-6">
                     <p class="fw-bold">{{post.created_at}}</p>
                     <h5>{{post.title}}</h5>
-                    <p>{{post.description}}</p>
+                    <span v-html="post.description"></span>
                 </div>
                 <div class="col-lg-6">
                     <img alt="Sfeeractiefoto" :src="post.image" class="img-fluid rounded"/>

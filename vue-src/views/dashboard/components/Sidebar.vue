@@ -5,7 +5,7 @@
     <div class="row mt-lg-5 options">
         <p class="title mb-2">Sfeeracties</p>
         <router-link to="/dashboard/nieuw-bericht">Toevoegen</router-link>
-        <p>Bestaand</p>
+        <router-link to="/dashboard/sfeeracties">Bestaand</router-link>
     </div>
     <div class="row mt-lg-5 options">
         <p class="title mb-2">Nieuws</p>

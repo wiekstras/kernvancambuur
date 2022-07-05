@@ -117,7 +117,6 @@ class VolunteerController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        //
     }
 
     /**

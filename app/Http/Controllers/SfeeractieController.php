@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\Event;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
+
 
 class SfeeractieController extends BaseController
 {
@@ -45,36 +48,26 @@ class SfeeractieController extends BaseController
      */
     public function store(Request $request)
     {
+        // Still need to check for authenticated user first.
+
         $request->validate([
             'title' => 'required',
-            'file' => 'required',
             'description' => 'required'
         ], SfeeractieController::messages());
-
-        $path = $request->file('file')->store(
-            'pictures', 'public'
-        );
 
         $newEvent = [
             'title' => $request['title'],
             'user_id' => 2, // Default for now
-            'image_url' => $path,
             'description' => $request['description'],
+            'image_url' => '',
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now()
         ];
         
-        $result = '';
-        try 
-        {
-            $result = (new Event)->insertEvent($newEvent);
-        } catch (Exception $e) {   
-            $result = $e->message();
-        }
+        $model = Event::create($newEvent);
 
-        return response()->json([
-                'message' => $result
-            ]);   
+        $model->refresh();
+        return $model;
     }
 
     /**
@@ -85,7 +78,11 @@ class SfeeractieController extends BaseController
      */
     public function show($id)
     {
-        //
+        $model = Event::where([
+            'id' => $id,
+        ])->firstOrFail();
+
+        return $model;
     }
 
     /**
@@ -108,7 +105,32 @@ class SfeeractieController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        //
+        // Get requested News Blog obj
+        $model = Event::where([
+            'id' => $id,
+        ])->firstOrFail();
+
+        $request->validate([
+            'title' => 'required',
+            'description' => 'required'
+        ], SfeeractieController::messages());
+
+        $updateEvent = [
+            'title' => $request['title'],
+            'user_id' => 2, // Default for now
+            'description' => $request['description'],
+            'image_url' => '',
+            'created_at' => $model->created_at,
+            'updated_at' => Carbon::now()
+        ];
+
+        // Update the model with it
+        $model->fill($updateEvent);
+        $model->save();
+
+        // Return updated News object
+        $model->refresh();
+        return $model;
     }
 
     /**
@@ -122,11 +144,36 @@ class SfeeractieController extends BaseController
         //
     }
 
+    public function upload(Request $request, int $id)
+    {
+        $user = $request->user();
+
+        Log::info($id);
+
+        $event = Event::where([
+            'id' => $id
+        ])->firstOrFail();
+
+         $request->validate([
+            'file' => 'required|image:jpeg,jpg,png|max:10240|dimensions:min_width=500,min_height=280,max_width=6000,max_height=6000',
+        ]);
+
+        $folder = 'sfeeracties';
+        $image  = $request->file('file');
+        $path   = $image->store($folder, 'public');
+
+        $event->image_url = $path;
+        $event->save();
+
+        return response()->json([
+                'message' => true
+            ]);
+    }
+
     public static function messages($id = '')
     {
         return [
             'title.required' => 'Titel is verplicht.',
-            'file.required' => 'foto is verplicht.',
             'description.required' => 'beschrijving is verplicht.'
         ];
     }
