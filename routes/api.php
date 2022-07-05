@@ -53,6 +53,8 @@ Route::post('/v1/lid-worden/donateur-worden', [MemberController::class, 'store']
 Route::get('/v1/member/get', [MemberController::class, 'index']);
 Route::get('/v1/member/delete/{id}', [MemberController::class, 'destroy']);
 Route::get('/v1/member/show/{id}', [MemberController::class, 'show']);
+Route::get('/v1/member/get-unaccepted', [MemberController::class, 'getUnaccepted']);
+Route::post('/v1/member/accept-member/{id}', [MemberController::class, 'acceptMember'])->where('id', '[0-9]+');
 
 //Contact
 Route::post('/v1/contact', [ContactController::class, 'store']);

@@ -8,6 +8,7 @@ use App\Models\Member;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 class MemberController extends BaseController
 {
@@ -18,9 +19,17 @@ class MemberController extends BaseController
      */
     public function index()
     {
-       return Member::with('address')->get();
+        return Member::with('address')->where('status',1)->get();
+
     }
 
+    public function getUnaccepted(){
+        return Member::with('address')->where('status',0)->get();
+    }
+
+    public function acceptMember($id){
+        DB::update('update members set status = 1 where id = ?',[$id]);
+    }
     /**
      * Show the form for creating a new resource.
      *

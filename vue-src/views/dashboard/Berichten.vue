@@ -10,9 +10,11 @@
             <p>Bericht: {{ item.message }}</p>
         </template>
     </Modal>
-    <table class="table">
-        <p v-if="FormData.length < 1"> Er zijn geen berichten </p>
-        <thead v-if="FormData.length > 0">
+    <div class="container-fluid">
+        <h1>Alle berichten</h1>
+        <table class="table">
+            <p v-if="FormData.length < 1"> Er zijn geen berichten </p>
+            <thead v-if="FormData.length > 0">
             <tr>
                 <th scope="col">Naam</th>
                 <th scope="col">Emailadres</th>
@@ -20,20 +22,22 @@
                 <th scope="col">Onderwerp</th>
                 <th scope="col">Verzonden</th>
             </tr>
-        </thead>
-        <tbody v-for="item in FormData" v-if="FormData.length > 0">
+            </thead>
+            <tbody v-for="item in FormData" v-if="FormData.length > 0">
             <tr>
                 <td>{{ item.name }}</td>
                 <td>{{ item.email }}</td>
                 <td>{{ item.phone }}</td>
                 <td>{{ item.subject }}</td>
                 <td>{{ item.created_at }}</td>
-                <td><button v-on:click="showMessage(item.id)">Open</button></td>
-                <td><button v-on:click="deleteMessage(item.id)">Verwijder</button></td>
+                <td><button v-on:click="showMessage(item.id)" class="btn btn-info rounded-2" type="button">Open</button></td>
+                <td><button v-on:click="deleteMessage(item.id)" class="btn btn-danger rounded-2" type="button">Verwijder</button></td>
             </tr>
 
-        </tbody>
-    </table>
+            </tbody>
+        </table>
+
+    </div>
 </template>
 
 <script>
@@ -81,7 +85,4 @@ export default {
 </script>
 
 <style scoped>
-.table {
-    color: white
-}
 </style>

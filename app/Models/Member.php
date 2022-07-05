@@ -50,4 +50,7 @@ class Member extends AbstractModel
     {
         return DB::table('members')->insertGetId($values);
     }
+    public function getUnacceptedMembers(){
+        return DB::table('members')->where('status', 0);
+    }
 }

@@ -18,6 +18,7 @@ import Vrijwilligers from "@/views/dashboard/Vrijwilligers.vue";
 import NieuwNieuwsBericht from "@/views/dashboard/NieuwNieuwsBericht.vue";
 import BestaandeNieuwsBerichten from "@/views/dashboard/BestaandeNieuwsBerichten.vue";
 import NieuwBericht from '@/views/dashboard/Sfeeractie.vue'
+import nieuweAanmeldingen from '@/views/dashboard/nieuweAanmeldingen.vue'
 
 let routes = [
     {path: '/', component: HomePage, name: 'HomePage'},
@@ -71,6 +72,11 @@ let routes = [
                 name: 'nieuwsbericht bestaand',
                 component: BestaandeNieuwsBerichten
             },
+            {
+                path: 'nieuwe-aanmeldingen',
+                name: 'Nieuwe aanmeldingen',
+                component: nieuweAanmeldingen
+            },
         ],
         meta:{
             hideNavbar: true,
@@ -93,7 +99,6 @@ const router = createRouter({
 // Add authentication/authorization checks
 
 import {useAuthStore} from '@/store/auth';
-
 
 router.beforeEach(async (to, from) => {
     // Setup auth store and wait before navigation

@@ -15,7 +15,7 @@ export default{
     },
     created(){
         this.authStore.setAxios(this.axios);
-    }
+    },
 }
 
 </script>
