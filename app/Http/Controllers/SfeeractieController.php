@@ -105,7 +105,6 @@ class SfeeractieController extends BaseController
      */
     public function update(Request $request, $id)
     {
-        // Get requested News Blog obj
         $model = Event::where([
             'id' => $id,
         ])->firstOrFail();
@@ -141,14 +140,18 @@ class SfeeractieController extends BaseController
      */
     public function destroy($id)
     {
-        //
+        $model = Event::where([
+            'id' => $id,
+        ])->firstOrFail();
+
+        $model->delete();
+
+        return;
     }
 
     public function upload(Request $request, int $id)
     {
         $user = $request->user();
-
-        Log::info($id);
 
         $event = Event::where([
             'id' => $id
