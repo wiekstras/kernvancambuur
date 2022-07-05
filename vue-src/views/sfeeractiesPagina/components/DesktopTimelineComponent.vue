@@ -1,6 +1,6 @@
 <template>
-    <div v-for="post in posts" class="row mb-lg-4">
-        <div v-if="post.id % 2 === 0" class="col-lg-12">
+    <div v-for="(post,index) in posts" class="row mb-lg-4">
+        <div v-if="index % 2 === 0" class="col-lg-12">
             <div class="row">
                 <div class="col-lg-6">
                     <img :src="post.image" alt="Sfeeractiefoto" class="img-fluid rounded"/>

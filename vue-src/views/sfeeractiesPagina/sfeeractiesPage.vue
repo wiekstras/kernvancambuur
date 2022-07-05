@@ -2,12 +2,11 @@
     <div class="sfeeracties">
       <div class="container">
         <div class="row">
-            <div class="col-12 col-md-6 col-lg-7 col-xxl-8 desc">
+            <div class="col-12 col-md-6 col-lg-12 col-xxl-8 desc">
                 <DescriptionComponent />
             </div>
-            <div class="col-12 col-md-6 col-lg-5 col-xxl-4">
-                <PastSfeeractiesComponent />
-            </div>
+        </div>
+        <div class="row">
             <div class="col-12">
                 <TimelineComponent />
             </div>
