@@ -18,6 +18,7 @@ import Vrijwilligers from "@/views/dashboard/Vrijwilligers.vue";
 import NieuwNieuwsBericht from "@/views/dashboard/NieuwNieuwsBericht.vue";
 import BestaandeNieuwsBerichten from "@/views/dashboard/BestaandeNieuwsBerichten.vue";
 import NieuwBericht from '@/views/dashboard/Sfeeractie.vue'
+import BestaandeSfeeracties from '@/views/dashboard/BestaandeSfeeracties.vue'
 
 let routes = [
     {path: '/', component: HomePage, name: 'HomePage'},
@@ -40,6 +41,16 @@ let routes = [
                 path: 'nieuw-bericht',
                 name: 'NieuwBericht',
                 component: NieuwBericht
+            },
+            {
+                path: 'nieuw-bericht/:id',
+                name: 'edit nieuw bericht',
+                component: NieuwBericht
+            },
+            {
+                path: 'sfeeracties',
+                name: 'Sfeeracties',
+                component: BestaandeSfeeracties
             },
             {
                 path: 'berichten',
