@@ -1,101 +1,114 @@
 <template>
-  <div class="bg-image" style="padding-bottom: 5%; border-bottom: 3px solid #FAE300;">
-    <div class="topbar">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-9 col-7">
-            <div class="social">
-            <a href="tel:0582152499"><img src="../assets/phone.png"><span>058-2152499</span></a>
-            <a href="https://goo.gl/maps/kSjGCx21Tx3HaVXy5" target="_blank"><img class="loc" src="../assets/location.png"> <span>Hanckemastins 37, 8925 EC Leeuwarden</span></a>
-            <a href="mailto:info@kernvancambuur.nl"><img class="email" src="../assets/email.png"><span>info@kernvancambuur.nl</span></a>
-          </div>
-        </div>
-        <div class="search col-md-3 col-5">
-          <div class="expSearchBox">
-            <div class="expSearchFrom">
-              <form action="/Zoek" role="search" class="" method="get">
-                <input id="field" type="text" value="" required name="strZoekterm" placeholder="" />
-                  <div class="close">
-                    <span class="front"></span>
-                    <span class="back"></span>
+    <div class="bg-image" style="padding-bottom: 5%;border-bottom: 3px solid #FAE300;">
+        <div class="topbar">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-9 col-7">
+                        <div class="social">
+                            <a href="tel:0582152499">
+                                <img src="../assets/phone.png"/>
+                                <span>058-2152499</span>
+                            </a>
+                            <a href="https://goo.gl/maps/kSjGCx21Tx3HaVXy5" target="_blank">
+                                <img class="loc" src="../assets/location.png"/>
+                                <span>Hanckemastins 37, 8925 EC Leeuwarden</span>
+                            </a>
+                            <a href="mailto:info@kernvancambuur.nl">
+                                <img class="email" src="../assets/email.png">
+                                <span>info@kernvancambuur.nl</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="search col-md-3 col-5">
+                        <div class="expSearchBox">
+                            <div class="expSearchFrom">
+                                <form action="/Zoek" role="search" class="" method="get">
+                                    <input id="field" type="text" value="" required name="strZoekterm" placeholder=""/>
+                                    <div class="close">
+                                        <span class="front"></span>
+                                        <span class="back"></span>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </form>
-          </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-
-  </div>
-    <nav class="navbar navbar-expand-lg">
-      <div class="container">
-        <div class="hamburger">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <img src="../assets/square.png">
-          </button>
-        </div>
-
-            <ul class="navbar-nav ul-one mx-auto">
-            <a href="/"><img class="logo" src="../assets/logo-kvc.png"></a>
-            <a href="/"><img class="logo_text" src="../assets/text-version.png"></a>
-          </ul>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-           <ul class="navbar-nav ul-one">
-            <li class="nav-item">
-                  <a class="nav-link" href="/">Home</a>
-              </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/over-ons">Kern van cambuur</a>
-              </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="/Sfeeracties">Sfeeracties</a>
-              </li>
-          </ul>
-
-          <ul class="login navbar-nav ul-two ms-auto">
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="/Lid-worden">Lid worden</a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="/lid-worden/vrijwilliger-worden">Vrijwilliger</a></li>
-                    <li><a class="dropdown-item" href="/lid-worden/donateur-worden">Lid</a></li>
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <div class="hamburger">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <img src="../assets/square.png">
+                    </button>
+                </div>
+                <ul class="navbar-nav ul-one mx-auto">
+                    <router-link to="/">
+                        <img class="logo" src="../assets/logo-kvc.png">
+                    </router-link>
+                    <router-link to="/">
+                        <img class="logo_text" src="../assets/text-version.png">
+                    </router-link>
                 </ul>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/Contact">Contact</a>
-            </li>
-              <!-- <li class="nav-item">
-              <a class="nav-link" href="/Wedstrijden">Wedstrijden</a>
-            </li> -->
-          <li class="nav-item">
-            <a class="nav-link" href="/Nieuws-berichten">Nieuws</a>
-          </li>
-        </ul>
-
-      </div>
-    </div>
-  </nav>
-  <div class="container">
-    <div class="htext">
-      <div class="row">
-        <div class="col-lg-8 col-md-7">
-           <h2>Supportvereniging</h2>
-           <h1>SCS Kern van Cambuur</h1>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ul-one">
+                        <li class="nav-item">
+                            <router-link @click="collapseNav" to="/" class="nav-link">Home</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link @click="collapseNav" to="/over-ons" class="nav-link">Kern van cambuur</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link @click="collapseNav" to="/sfeeracties" class="nav-link">Sfeeracties</router-link>
+                        </li>
+                    </ul>
+                    <ul class="login navbar-nav ul-two ms-auto">
+                        <li class="nav-item dropdown">
+                            <router-link to="/Lid-worden" data-bs-toggle="dropdown" class="nav-link dropdown-toggle">Lid worden</router-link>
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <router-link @click="collapseNav" to="/lid-worden/vrijwilliger-worden" class="dropdown-item">Vrijwilliger</router-link>
+                                </li>
+                                <li>
+                                    <router-link @click="collapseNav" to="/lid-worden/donateur-worden" class="dropdown-item">Lid</router-link>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="nav-item">
+                            <router-link @click="collapseNav" to="/contact" class="nav-link">Contact</router-link>
+                        </li>
+                        <li class="nav-item">
+                            <router-link @click="collapseNav" to="/nieuws-berichten" class="nav-link">Nieuws</router-link>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div class="htext">
+                <div class="row">
+                    <div class="col-lg-8 col-md-7">
+                        <h2>Supportvereniging</h2>
+                        <h1>SCS Kern van Cambuur</h1>
+                    </div>
+                    <div class="col-lg-4 col-md-5 mt-4 text-center buttons">
+                        <a href="/lid-worden/donateur-worden"><button type="button"  class="btn btn-outline-primary">Word lid</button></a>
+                        <a href="/lid-worden/vrijwilliger-worden"><button type="button"  class="btn btn-outline-secondary">Steun ons</button></a>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-lg-4 col-md-5 mt-4 text-center buttons">
-           <a href="/lid-worden/donateur-worden"><button type="button"  class="btn btn-outline-primary">Word lid</button></a>
-           <a href="/lid-worden/vrijwilliger-worden"><button type="button"  class="btn btn-outline-secondary">Steun ons</button></a>
-        </div>
-      </div>
     </div>
-  </div>
-</div>
-
 </template>
 
 <script>
 export default {
     name: "Navbar",
+    methods: {
+        collapseNav(){
+            document.getElementById('navbarSupportedContent').classList.remove('show')
+        }
+    }
 }
 </script>
 
